@@ -5,6 +5,10 @@
         <group>
             <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/Livre.java</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/Databases.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/index.html</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/LivreView.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Router/LivreRouter.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Controllers/LivreController.java</file>
         </group>
     </open-files>
 </project-private>
