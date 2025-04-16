@@ -5,6 +5,12 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.List"  %>
+<%@page import="Models.Livre" %>
+<%
+      List<Livre> livres=  (List<Livre>)request.getAttribute("livres");
+     
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -34,6 +40,17 @@
           </nav>
         <div>
             Livre
+            <%
+                for(Livre livre:livres){
+                    
+             
+            %>
+            <p><%=livre.getDesign()%></p>
+             <%
+            
+                    
+                }
+            %>
         </div>  
         
         <script src="bootstrap/js/bootstrap.js"></script>

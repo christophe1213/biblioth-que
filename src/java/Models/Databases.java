@@ -4,18 +4,20 @@
  */
 package Models;
 
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 /**
  *
  * @author Thierry Christophe
  */
 public class Databases {
-      protected static  Connection con ;
+      public static  Connection con ;
       protected static PreparedStatement ps ;
-      protected static String url = "jdbc:postgresql://localhost:5432/test";;
+      protected static String url = "jdbc:postgresql://localhost:5432/bibliotheque";;
       protected static String user = "postgres";
       protected static String password = "azerty";
       
@@ -39,6 +41,18 @@ public class Databases {
          con =conn;
    }
     
+    public static ResultSet querry(String q){
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        try{
+             ps = con.prepareStatement(q);
+             rs = ps.executeQuery();
+        }catch(Exception e){
+            System.out.println("error");
+        }
+        return rs;
+        
+    }
     public static void closeConnection(){
         con=null;
     }
