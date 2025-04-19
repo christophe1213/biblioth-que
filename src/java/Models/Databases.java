@@ -26,7 +26,7 @@ public class Databases {
         
     }
     
-    public  static void getConnecion(){
+    public  static void getConnecion() {
      
         Connection conn = null;
         try {
@@ -53,6 +53,7 @@ public class Databases {
         return rs;
         
     }
+    public static Prepared
     public static void closeConnection(){
         con=null;
     }

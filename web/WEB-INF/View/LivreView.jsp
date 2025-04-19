@@ -9,7 +9,8 @@
 <%@page import="Models.Livre" %>
 <%
       List<Livre> livres=  (List<Livre>)request.getAttribute("livres");
-     
+      livres=  (List<Livre>)request.getAttribute("livres");
+      String error = (String)request.getAttribute("error");
 %>
 <!DOCTYPE html>
 <html>
@@ -40,18 +41,48 @@
           </nav>
         <div>
             Livre
-            <%
-                for(Livre livre:livres){
-                    
-             
-            %>
-            <p><%=livre.getDesign()%></p>
-             <%
+                 <p><%if(error!=null)
+                     out.print(error);
+                     %></p>
+           <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+              <tr>
+                <th>#</th>
+                <th>Livre</th>
+                <th>exemplaire</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
             
-                    
-                }
+            <tbody id="employeeTableBody">
+              <!-- Contenu dynamique -->
+                    <%
+                    if(livres!=null)
+                        for(Livre livre:livres){
+                    %>
+                   <tr>
+                            <td><%=livre.getIdlivre()%></td>
+                            <td><%=livre.getDesign()%></td>
+                            <td><%=livre.getExemplaire() %></td>
+                            <td>
+                                <button class="btn btn-sm btn-success me-2">Modifier</button>
+                              <button class="btn btn-sm btn-danger">Supprimer</button>
+                            </td>
+                    </tr>
+                 
+                     <%
+                
+                        
+                    }
             %>
-        </div>  
+        </div>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    
         
         <script src="bootstrap/js/bootstrap.js"></script>
     </body>
