@@ -42,34 +42,40 @@ public class LivreDao {
     }
     
     public void add(Livre l)throws Exception {
-
-         /*  super.getConnecion();
-        PreparedStatement ps = null;
-        String v; 
-        try{
-            ps=con.prepareStatement("INSERT into tasks values(?,?);");
-            ps.setInt(1, t.getId());
-            ps.setString(2, t.getTask());
-            ps.executeUpdate();
-            con=null;
-            v="success";
-        }catch(Exception e){
-            v="error"+e.getMessage();
-        }
-        return v;*/
          try{
                 Databases.getConnecion();
-                PreparedStatement ps = null;
-      
+                PreparedStatement ps = Databases.preparedQuerry("INSERT into livre values(?,?,?)");
+                ps.setString(1, l.getIdlivre());
+                ps.setString(2, l.getDesign());
+                ps.setInt(3, l.getExemplaire());
+                ps.executeUpdate();
                 
          }finally{
              Databases.closeConnection(); 
          }
-     
-      
-     
-    
-        
     }
     
+    public void update(Livre l) throws Exception{
+        Databases.getConnecion();
+        try{
+            PreparedStatement ps= Databases.preparedQuerry("UPDATE  livre set  designation=?,exemplaire=? WHERE idlivre=?");
+            ps.setString(3, l.getIdlivre());
+            ps.setString(1, l.getDesign());
+            ps.setInt(2, l.getExemplaire());
+            ps.executeUpdate();
+        }finally{
+            Databases.closeConnection();
+        }
+    }
+    
+    public void delete(String id) throws Exception{ 
+        Databases.getConnecion();
+        try{
+            PreparedStatement ps= Databases.preparedQuerry("DELETE FROM livre where idlivre=?");
+            ps.setString(1, id);
+            ps.executeUpdate();
+        }finally{
+            Databases.closeConnection();
+        }
+    }
 }

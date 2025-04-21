@@ -53,7 +53,12 @@ public class Databases {
         return rs;
         
     }
-    public static Prepared
+    public static PreparedStatement preparedQuerry(String q)throws Exception{
+         PreparedStatement ps = null;
+         ps=con.prepareStatement(q);
+         return ps;
+         
+    }
     public static void closeConnection(){
         con=null;
     }

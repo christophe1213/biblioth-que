@@ -60,7 +60,18 @@ public class LivreRouter extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        LivreController.postRequest(request, response);
+    }
+    @Override
+    
+    protected void doPut(HttpServletRequest request, HttpServletResponse response)
+                throws ServletException, IOException {
+        LivreController.putRequest(request, response);
+    }
+    @Override
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+         LivreController.deleteRequest(request, response);
     }
 
     /**

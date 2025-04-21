@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import Models.LivreDao;
 import Models.Livre;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import  java.util.List;
 /**
@@ -30,5 +31,50 @@ public class LivreController {
              request.setAttribute("livres", livres);
              request.getRequestDispatcher("/WEB-INF/View/LivreView.jsp").forward(request, response);
      
+    }
+    
+    public static void postRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+            //int id =Integer.parseInt(request.getParameter("id")) ;
+          
+             PrintWriter out = response.getWriter();
+            try{
+                  String design= request.getParameter("design");
+                   String idLivre=request.getParameter("idlivre");
+                   int exemplaire = Integer.parseInt(request.getParameter("exemplaire"));
+                   LivreDao livreService = new LivreDao();
+                   livreService.add( new Livre(idLivre,design,exemplaire));
+                  out.print("success");
+            }catch(Exception e){
+                out.println("error: "+e.getMessage());
+            }
+    }
+    
+    public static void putRequest(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException{
+        PrintWriter out = response.getWriter();
+        try{
+            String design= request.getParameter("design");
+            String idLivre=request.getParameter("idlivre");
+            int exemplaire = Integer.parseInt(request.getParameter("exemplaire"));
+            LivreDao livreService = new LivreDao();
+            livreService.update(new Livre(idLivre,design,4));
+            out.print("success");
+        }catch(Exception e){
+            out.println(e.getMessage());        
+        }
+    }
+    
+    public static void deleteRequest(HttpServletRequest request, HttpServletResponse response)
+      throws ServletException, IOException{
+        PrintWriter out = response.getWriter();
+        try{
+            String idLivre=request.getParameter("idlivre");
+            LivreDao livreService = new LivreDao();
+            livreService.delete(idLivre);
+            out.print("success");
+        }catch(Exception e){
+            out.println(e.getMessage());        
+        }
     }
 }
