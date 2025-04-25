@@ -16,7 +16,7 @@ import Controllers.MembreController;
  *
  * @author Thierry Christophe
  */
-@WebServlet(name = "MembreRouter", urlPatterns = {"/Membre"})
+@WebServlet(name = "MembreRouter", urlPatterns = {"/Membre/*"})
 public class MembreRouter extends HttpServlet {
 
     /**
@@ -71,7 +71,12 @@ public class MembreRouter extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        MembreController.postRequest(request, response);
+       String url=request.getRequestURI();
+       if(url.equals("/Bibliotheque/Membre/add"))
+            MembreController.postRequest(request, response);
+       else if(url.equals("/Bibliotheque/Membre/update")){
+            MembreController.putRequest(request, response);
+       }
     }
 
     @Override

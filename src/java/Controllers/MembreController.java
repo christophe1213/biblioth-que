@@ -22,7 +22,7 @@ public class MembreController {
                 int age=Integer.parseInt(request.getParameter("age"));
                 MembreDao membreService= new MembreDao();
                 membreService.add(new Membre(idpers,nom,sexe,age,contact));
-                out.print("success");
+                out.print("success add");
             }catch(Exception e){
                 out.println("error: "+e.getMessage());
             }
@@ -39,7 +39,7 @@ public class MembreController {
                 int age=Integer.parseInt(request.getParameter("age"));
                 MembreDao membreService= new MembreDao();
                 membreService.update(new Membre(idpers,nom,sexe,age,contact));
-                out.print("success");
+                out.print("success pupdate");
             }catch(Exception e){
                 out.println("error: "+e.getMessage());
             }
@@ -52,7 +52,7 @@ public class MembreController {
                 String idpers=request.getParameter("idpers");
                 MembreDao membreService= new MembreDao();
                 membreService.delete(idpers);
-                out.print("success");
+                out.print("success delete"+idpers);
             }catch(Exception e){
                 out.println("error: "+e.getMessage());
             }
