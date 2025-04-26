@@ -19,7 +19,16 @@ import  java.util.List;
  */
 public class LivreController {
      
-    public static void getRequest(HttpServletRequest request, HttpServletResponse response)
+    public static void get(HttpServletRequest request, HttpServletResponse response)
+         throws ServletException, IOException {
+   
+             request.getRequestDispatcher("/WEB-INF/View/Livre.jsp").forward(request, response);
+        
+
+    }
+    
+    
+    public static void getDataRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
              List<Livre> livres = new ArrayList<Livre>(); 
             try{

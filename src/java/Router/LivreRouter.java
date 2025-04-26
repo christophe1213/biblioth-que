@@ -16,7 +16,7 @@ import Controllers.LivreController;
  *
  * @author Thierry Christophe
  */
-@WebServlet(name = "LivreRouter", urlPatterns = {"/Livre"})
+@WebServlet(name = "LivreRouter", urlPatterns = {"/Livre/*"})
 public class LivreRouter extends HttpServlet {
 
     /**
@@ -28,11 +28,7 @@ public class LivreRouter extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-             LivreController.getRequest(request, response);
-       
-    }
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -46,7 +42,13 @@ public class LivreRouter extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String url=request.getRequestURI();
+       if(url.equals("/Bibliotheque/Livre/get"))
+            //MembreController.postRequest(request, response);
+           LivreController.getDataRequest(request, response);
+       else {
+            LivreController.get(request, response);       
+       }     
     }
 
     /**

@@ -5,8 +5,8 @@ const fetchCustomers = ()=>{
                 headers:{
                     "Content-Type": "application/x-www-form-urlencoded",
                 },
-                body:data.toString()
-            
+                // body:data.toString()
+                
             }
         )
         if(r.ok) return r.text()
@@ -34,3 +34,4 @@ const fetchCustomers = ()=>{
   
    
 }
+  const api= fetchCustomers()
