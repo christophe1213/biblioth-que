@@ -1,14 +1,16 @@
 const fetchCustomers = ()=>{
     const fetchData=async(url,method,data='')=>{
-        const r = await fetch(url,{
-                method:method,
-                headers:{
-                    "Content-Type": "application/x-www-form-urlencoded",
-                },
-                // body:data.toString()
-                
-            }
-        )
+        
+        const options={
+            method:method,
+            headers:{
+                "Content-Type": "application/x-www-form-urlencoded",
+            },        
+        }
+        if(method!='GET')options.body=data.toString()
+   
+    
+        const r = await fetch(url,options)
         if(r.ok) return r.text()
             else throw new Error('Erreur de url')
         }       
