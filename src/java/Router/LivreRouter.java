@@ -62,7 +62,21 @@ public class LivreRouter extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        LivreController.postRequest(request, response);
+        String url=request.getRequestURI();
+       if(url.equals("/Bibliotheque/Livre/add"))
+          LivreController.postRequest(request, response);
+       else if(url.equals("/Bibliotheque/Livre/update")) {
+            //LivreController.get(request, response);  
+            LivreController.putRequest(request, response);
+       }else if(url.equals("/Bibliotheque/Livre/delete")) {
+           
+           LivreController.deleteRequest(request, response);
+       }    
+       else {
+            PrintWriter out = response.getWriter();
+            out.println("error request ");
+       } 
+       
     }
     @Override
     

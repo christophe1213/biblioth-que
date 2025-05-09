@@ -26,7 +26,7 @@
                             <td><%=livre.getExemplaire() %></td>
                             <td>
                                 <button class="btn btn-sm btn-success me-2">Modifier</button>
-                              <button class="btn btn-sm btn-danger">Supprimer</button>
+                              <button class="btn btn-sm btn-danger" id=""  onclick="deleteLivre('<%=livre.getIdlivre()%>')">Supprimer</button>
                             </td>
                     </tr>
                  

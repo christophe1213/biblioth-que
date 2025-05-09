@@ -64,11 +64,11 @@ public class LivreController {
         PrintWriter out = response.getWriter();
         try{
             String design= request.getParameter("design");
-            String idLivre=request.getParameter("idlivre");
+            /*String idLivre=request.getParameter("idlivre");
             int exemplaire = Integer.parseInt(request.getParameter("exemplaire"));
             LivreDao livreService = new LivreDao();
             livreService.update(new Livre(idLivre,design,4));
-            out.print("success");
+            **/out.print("success");
         }catch(Exception e){
             out.println(e.getMessage());        
         }
@@ -81,7 +81,7 @@ public class LivreController {
             String idLivre=request.getParameter("idlivre");
             LivreDao livreService = new LivreDao();
             livreService.delete(idLivre);
-            out.print("success");
+            out.print("success"+idLivre);
         }catch(Exception e){
             out.println(e.getMessage());        
         }
