@@ -38,7 +38,8 @@ public class LivreController {
                  request.setAttribute("error", e.getMessage());
              }
              request.setAttribute("livres", livres);
-             request.getRequestDispatcher("/WEB-INF/View/LivreView.jsp").forward(request, response);
+             request.getRequestDispatcher("/WEB-INF/components/PageLivre/LivreView.jsp").forward(request, response);
+             //request.getRequestDispatcher("WEB-INF/Test.jsp").forward(request,response);
      
     }
     

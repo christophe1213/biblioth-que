@@ -14,7 +14,7 @@ async function addLivre(d){
     const r = await api.post("Livre/add",d)
     console.log(r)
 }
-document.getElementById('formadd').addEventListener('submit',(e)=>{
+/*document.getElementById('formadd').addEventListener('submit',(e)=>{
     e.preventDefault()
     console.log(e.target)
     const form =e.target
@@ -28,7 +28,7 @@ document.getElementById('formadd').addEventListener('submit',(e)=>{
     }).catch((e)=>console.error())
     // XMLDocumentgi
 })
-
+*/
 function deleteLivre(id){
     const formData = new URLSearchParams();
     console.log(id)
