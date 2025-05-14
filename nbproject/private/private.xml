@@ -8,7 +8,7 @@
             <file>file:/D:/Test/TestJava/Bibliothèque/web/js/fetchCustomers.js</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/Livre.jsp</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/web/index.html</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Header.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/NavBar.jsp</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Controllers/LivreController.java</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Router/LivreRouter.java</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Controllers/PreterController.java</file>
@@ -20,6 +20,8 @@
             <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/Rendre.java</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/Test.jsp</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageLivre/InsertModalLivre.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageLivre/TableLivre.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Header.jsp</file>
         </group>
     </open-files>
 </project-private>
