@@ -11,6 +11,14 @@ import Models.Membre;
 import Models.MembreDao;
 public class MembreController {
     
+      public static void get(HttpServletRequest request, HttpServletResponse response)
+         throws ServletException, IOException {
+   
+             request.getRequestDispatcher("/WEB-INF/View/Membre.jsp").forward(request, response);
+        
+
+    }
+    
     public static void postRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
              PrintWriter out = response.getWriter();

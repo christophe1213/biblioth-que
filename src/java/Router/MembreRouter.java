@@ -57,7 +57,13 @@ public class MembreRouter extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+         String url=request.getRequestURI();
+       if(url.equals("/Bibliotheque/Membre/get"))
+           
+           System.out.println("e");
+       else {
+            MembreController.get(request, response);
+       }     
     }
 
     /**
