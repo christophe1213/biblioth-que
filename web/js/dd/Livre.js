@@ -14,21 +14,11 @@ async function addLivre(d){
     const r = await api.post("Livre/add",d)
     console.log(r)
 }
-/*document.getElementById('formadd').addEventListener('submit',(e)=>{
-    e.preventDefault()
-    console.log(e.target)
-    const form =e.target
-    const formData= new FormData(form)
-    const data= new URLSearchParams(formData)
-    console.log(data)
-   api.post('Livre/add',data).then((r)=>{
-     console.log(r)
-        console.log(r)
-         if(r=="success")getLivre()
-    }).catch((e)=>console.error())
-    // XMLDocumentgi
-})
-*/
+async function updateLivre(d){
+    const r = await api.post("Livre/update",d);
+    console.log(r);
+}
+
 function deleteLivre(id){
     const formData = new URLSearchParams();
     console.log(id)
@@ -37,4 +27,15 @@ function deleteLivre(id){
         console.log(r+'ff')
         if(r=="success")getLivre()
     }).catch((e)=>{ console.error()})
+}
+function setDataUpdate(idLivre,design,exemplaire){
+    let idLivreInput=document.getElementById('idLivreUpdate')
+    let designInput=document.getElementById('designUpdate')
+    let exemplaireInput=document.getElementById('exemplaireUpdate')
+
+    idLivreInput.value=idLivre
+    designInput.value =design
+    exemplaireInput.value=parseInt(exemplaire)    
+    console.log(idLivreInput)
+    
 }
