@@ -59,8 +59,8 @@ public class MembreRouter extends HttpServlet {
             throws ServletException, IOException {
          String url=request.getRequestURI();
        if(url.equals("/Bibliotheque/Membre/get"))
-           
-           System.out.println("e");
+           MembreController.getDataRequest(request, response);
+       
        else {
             MembreController.get(request, response);
        }     

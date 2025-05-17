@@ -19,6 +19,19 @@ public class MembreController {
 
     }
     
+     public static void getDataRequest(HttpServletRequest request, HttpServletResponse response)
+     throws ServletException, IOException{
+          List<Membre> membres = new ArrayList<Membre>(); 
+            try{
+                membres= new MembreDao().getAll();                
+             }catch(Exception e){
+                 System.out.println("error de "+e.getMessage());
+                 request.setAttribute("error", e.getMessage());
+             }
+             request.setAttribute("membres", membres);
+             request.getRequestDispatcher("/WEB-INF/components/PageMembre/MembreView.jsp").forward(request, response);
+     }
+    
     public static void postRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
              PrintWriter out = response.getWriter();

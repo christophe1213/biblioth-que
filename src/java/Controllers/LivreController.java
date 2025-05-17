@@ -30,7 +30,7 @@ public class LivreController {
     
     public static void getDataRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-             List<Livre> livres = new ArrayList<Livre>(); 
+            List<Livre> livres = new ArrayList<Livre>(); 
             try{
                 livres= new LivreDao().getAll();                
              }catch(Exception e){

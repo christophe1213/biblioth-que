@@ -33,7 +33,7 @@ function deleteMembre(id){
         if(r=="success")getMembre()
     }).catch((e)=>{ console.error()})
 }
-function setDataUpdate(id,nom,sexe,age,contact,email){
+function setDataMembreUpdate(id,nom,sexe,age,contact,email){
     let idMembreInput=document.getElementById('idMembreUpdate')
     let nomInput=document.getElementById('nomUpdate')
     let sexeInput=document.getElementById('sexeUpdate')

@@ -3,10 +3,10 @@
 <html>
     <jsp:include page="../components/Header.jsp" />
     <body>
-        <script src="js/dd/Livre.js"></script>
+        <script src="js/api/Membre.js"></script>
         <jsp:include page="../components/NavBar.jsp" />
         <jsp:include page="../components/SideBar.jsp"/>
-       
+        
          <div class="content">
         
             <div  class="section">
@@ -15,7 +15,7 @@
                         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Ajouter un membres</button>
                </div>
                 <div class="row">
-                   
+                    <jsp:include page="../components/PageMembre/TableMembre.jsp"/>
                 </div>
             </div>
         </div>       
