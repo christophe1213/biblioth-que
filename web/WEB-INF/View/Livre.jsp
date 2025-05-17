@@ -2,7 +2,7 @@
 <html>
     <jsp:include page="../components/Header.jsp" />
     <body>
-        <script src="js/dd/Livre.js"></script>
+        <script src="js/api/Livre.js"></script>
         <jsp:include page="../components/NavBar.jsp" />
         <jsp:include page="../components/SideBar.jsp"/>
         <jsp:include page="../components/PageLivre/InsertModalLivre.jsp" />
@@ -22,7 +22,7 @@
         </div>       
      <script src="bootstrap/js/bootstrap.js"></script>
      <script>
-         document.title="géstion des livres"
+         document.title="gï¿½stion des livres"
      </script>
     </body>
 </html>

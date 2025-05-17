@@ -1,0 +1,52 @@
+function getMembre(){
+    let tbody=document.getElementById('membreTbody')
+    api.get('Membre/get').then((r)=>{
+        console.log("success")
+        tbody.innerHTML=r
+    }).catch((console.error()))
+}
+
+async function addMembre(d){
+    try{
+        const r = await api.post('Membre/add',d)
+        console.log(r)
+    }catch(e){
+        console.log(e)
+    }
+   
+} 
+async function updateMembre (params) {
+    try{
+        const r = await api.post('Membre/update',d)
+        console.log(r)
+    }catch(e){
+        console.log(e)
+    }
+
+}
+function deleteMembre(id){
+    const formData = new URLSearchParams();
+    console.log(id)
+    formData.append("idmembre", id);
+    api.post('Membre/delete',formData).then((r)=>{
+        console.log(r)
+        if(r=="success")getMembre()
+    }).catch((e)=>{ console.error()})
+}
+function setDataUpdate(id,nom,sexe,age,contact,email){
+    let idMembreInput=document.getElementById('idMembreUpdate')
+    let nomInput=document.getElementById('nomUpdate')
+    let sexeInput=document.getElementById('sexeUpdate')
+    let ageInput=document.getElementById('ageUpdate')
+    let contactInput=document.getElementById('contactUpdate')
+    let emailInput=document.getElementById('emailUpdate')
+
+
+    idMembreInput.value=id
+    nomInput.value=nom
+    sexeInput.value=sexe
+    ageInput.value=age
+    contactInput.value=contact
+    emailInput.value=email
+    
+}
