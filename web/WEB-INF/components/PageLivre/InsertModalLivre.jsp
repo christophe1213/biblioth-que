@@ -46,7 +46,7 @@
     const formData= new FormData(form)
     const data= new URLSearchParams(formData)
     console.log(data)
-    insertLivre(data)
+    addLivre(data)
     })
 </script>
      
