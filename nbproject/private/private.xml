@@ -16,6 +16,11 @@
             <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageMembre/TableMembre.jsp</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageLivre/TableLivre.jsp</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/web/js/api/Membre.js</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageMembre/InsertMembreModal.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageMembre/DeleteModalMembre.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageMembre/UpdateMembreModal.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageLivre/UpdateModalLivre.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Header.jsp</file>
         </group>
     </open-files>
 </project-private>

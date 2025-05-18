@@ -7,6 +7,8 @@
         <jsp:include page="../components/NavBar.jsp" />
         <jsp:include page="../components/SideBar.jsp"/>
         <jsp:include page="../components/PageMembre/InsertMembreModal.jsp"/>
+        <jsp:include page="../components/PageMembre/UpdateMembreModal.jsp"/>
+
          <div class="content">
         
             <div  class="section">

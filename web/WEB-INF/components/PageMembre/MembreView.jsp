@@ -31,8 +31,8 @@
                                              '<%=membre.getIdpers()%>',
                                              '<%=membre.getNom()%>',
                                              '<%=membre.getSexe()%>',
-                 
                                              <%=membre.getAge()%>,
+                                             '<%=membre.getContact()%>',
                                              ''
                                                          
                                              )""

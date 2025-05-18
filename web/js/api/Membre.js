@@ -15,7 +15,7 @@ async function addMembre(d){
     }
    
 } 
-async function updateMembre (params) {
+async function updateMembre (d) {
     try{
         const r = await api.post('Membre/update',d)
         console.log(r)
@@ -36,7 +36,8 @@ function deleteMembre(id){
 function setDataMembreUpdate(id,nom,sexe,age,contact,email){
     let idMembreInput=document.getElementById('idMembreUpdate')
     let nomInput=document.getElementById('nomUpdate')
-    let sexeInput=document.getElementById('sexeUpdate')
+    let sexeMInput=document.getElementById('sexeM')
+    let sexeFInput=document.getElementById('sexeF')
     let ageInput=document.getElementById('ageUpdate')
     let contactInput=document.getElementById('contactUpdate')
     let emailInput=document.getElementById('emailUpdate')
@@ -44,7 +45,10 @@ function setDataMembreUpdate(id,nom,sexe,age,contact,email){
 
     idMembreInput.value=id
     nomInput.value=nom
-    sexeInput.value=sexe
+    //sexeInput.value=sexe
+    if(sexe=="M")sexeMInput.checked=true
+    else sexeFInput.checked=true
+    console.log(sexeMInput)
     ageInput.value=age
     contactInput.value=contact
     emailInput.value=email
