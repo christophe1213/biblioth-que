@@ -1,3 +1,9 @@
+<%-- 
+    Document   : UpdateMembreModal
+    Created on : 18 mai 2025, 15:37:17
+    Author     : Thierry Christophe
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <div class="modal fade" id="add">
     <div class="modal-dialog">
@@ -64,7 +70,7 @@
     const formData= new FormData(form)
     const data= new URLSearchParams(formData)
     console.log(data)
-    addMembre(data)
+    updateMembre(data)
     })
 </script>
      
