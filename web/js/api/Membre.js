@@ -27,11 +27,11 @@ async function updateMembre (params) {
 function deleteMembre(id){
     const formData = new URLSearchParams();
     console.log(id)
-    formData.append("idmembre", id);
+    formData.append("idpers", id);
     api.post('Membre/delete',formData).then((r)=>{
         console.log(r)
         if(r=="success")getMembre()
-    }).catch((e)=>{ console.error()})
+    }).catch((e)=>{ console.log(e)})
 }
 function setDataMembreUpdate(id,nom,sexe,age,contact,email){
     let idMembreInput=document.getElementById('idMembreUpdate')

@@ -37,7 +37,7 @@
                                                          
                                              )""
                                  >Modifier</button>
-                              <button class="btn btn-sm btn-danger" id=""  onclick="deleteLivre('<%=membre.getIdpers()%>')">Supprimer</button>
+                              <button class="btn btn-sm btn-danger" id=""  onclick="deleteMembre('<%=membre.getIdpers()%>')">Supprimer</button>
                             </td>
                     </tr>
                  

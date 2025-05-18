@@ -82,6 +82,10 @@ public class MembreRouter extends HttpServlet {
             MembreController.postRequest(request, response);
        else if(url.equals("/Bibliotheque/Membre/update")){
             MembreController.putRequest(request, response);
+       }else if(url.equals("/Bibliotheque/Membre/delete")){
+            MembreController.deleteRequet(request, response);
+       }else {
+           
        }
     }
 
