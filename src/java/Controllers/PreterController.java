@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import  java.util.List;
 import Models.Preter;
 import Models.PreterDao;
+import Models.LivreDao;
+import Models.Livre;
 
 public class PreterController {
     
@@ -28,7 +30,13 @@ public class PreterController {
                 LocalDateTime datpres=LocalDateTime.parse(request.getParameter("datePret"));
                 LocalDate dateRetour=LocalDate.parse(request.getParameter("dateRetour"));
                 PreterDao  preterService= new PreterDao();
+                Livre l = new LivreDao().getById(idlivre);
+                if(l.getExemplaire()-1<0){
+                    out.print("nombre de livre insuiffisant"+l.getDesign());
+                    return;
+                }
                 preterService.add(new Preter(idpret,idpers,idlivre,datpres,dateRetour));
+                new LivreDao().update(l);
                 out.print("success");
             }catch(Exception e){
                 out.println("error: "+e.getMessage());
@@ -45,6 +53,7 @@ public class PreterController {
                 LocalDateTime datpres=LocalDateTime.parse(request.getParameter("datePret"));
                 LocalDate dateRetour=LocalDate.parse(request.getParameter("dateRetour"));
                 PreterDao  preterService= new PreterDao();
+              
                 preterService.update(new Preter(idpret,idpers,idlivre,datpres,dateRetour));
                 out.print("success");
             }catch(Exception e){

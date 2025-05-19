@@ -40,7 +40,26 @@ public class LivreDao {
         
         return livres;  
     }
-    
+    public  Livre getById(String id) throws Exception{
+        Livre l = new Livre();
+        ResultSet rs = null;
+
+        try{
+            Databases.getConnecion();
+            PreparedStatement ps = Databases.preparedQuerry("SELECT * FROM livre WHERE idlivre=?");
+            ps.setString(1,id);
+            rs=ps.executeQuery();
+              while (rs.next()) {
+  
+               l.setIdlivre(rs.getString(1));
+               l.setDesign(rs.getString(2));
+               l.setExemplaire(rs.getInt(3));
+            
+            }
+        }finally{
+            return l;
+        }
+    }
     public void add(Livre l)throws Exception {
          try{
                 Databases.getConnecion();
