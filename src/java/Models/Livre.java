@@ -9,7 +9,7 @@ package Models;
  * @author Thierry Christophe
  */
 public class Livre {
-    private String idlivre="";
+    private int idlivre;
     
     private String design="";
     private int exemplaire=0;
@@ -20,19 +20,23 @@ public class Livre {
     public Livre(){
         
     }
-    public Livre(String id, String d,int e){
+    public Livre(int id, String d,int e){
         idlivre=id;
         design=d;
         exemplaire=e;
     }
-    public String getIdlivre() {
+     public Livre( String d,int e){
+        design=d;
+        exemplaire=e;
+    }
+    public int getIdlivre() {
         return idlivre;
     }
 
     /**
      * @param idlivre the idlivre to set
      */
-    public void setIdlivre(String idlivre) {
+    public void setIdlivre(int idlivre) {
         this.idlivre = idlivre;
     }
 

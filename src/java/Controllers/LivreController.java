@@ -50,10 +50,10 @@ public class LivreController {
              PrintWriter out = response.getWriter();
             try{
                   String design= request.getParameter("design");
-                   String idLivre=request.getParameter("idlivre");
+                   //int idLivre=request.getParameter("idlivre");
                    int exemplaire = Integer.parseInt(request.getParameter("exemplaire"));
                    LivreDao livreService = new LivreDao();
-                   livreService.add( new Livre(idLivre,design,exemplaire));
+                   livreService.add( new Livre(design,exemplaire));
                   out.print("success");
             }catch(Exception e){
                 out.println("error: "+e.getMessage());
@@ -65,10 +65,10 @@ public class LivreController {
         PrintWriter out = response.getWriter();
         try{
             String design= request.getParameter("design");
-            String idLivre=request.getParameter("idlivre");
+            int idLivre=Integer.parseInt(request.getParameter("idlivre"));
             int exemplaire = Integer.parseInt(request.getParameter("exemplaire"));
             LivreDao livreService = new LivreDao();
-            livreService.update(new Livre(idLivre,design,4));
+            livreService.update(new Livre(idLivre,design,exemplaire));
             out.print("success");
         }catch(Exception e){
             out.println(e.getMessage());        
@@ -79,7 +79,7 @@ public class LivreController {
       throws ServletException, IOException{
         PrintWriter out = response.getWriter();
         try{
-            String idLivre=request.getParameter("idlivre");
+            int idLivre= Integer.parseInt(request.getParameter("idlivre"));
             LivreDao livreService = new LivreDao();
             livreService.delete(idLivre);
             out.print("success"+idLivre);

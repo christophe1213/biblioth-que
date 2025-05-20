@@ -24,7 +24,7 @@ public class LivreDao {
             rs= Databases.querry("SELECT *  from livre");
             while (rs.next()) {
   
-                String id=rs.getString(1);
+                int id=rs.getInt(1);
                 String design=rs.getString(2);
                 int e=rs.getInt(3);
                 Livre l = new Livre(id,design,e);
@@ -40,20 +40,20 @@ public class LivreDao {
         
         return livres;  
     }
-    public  Livre getById(String id) throws Exception{
+    public  Livre getById(int id) throws Exception{
         Livre l = new Livre();
         ResultSet rs = null;
 
         try{
             Databases.getConnecion();
             PreparedStatement ps = Databases.preparedQuerry("SELECT * FROM livre WHERE idlivre=?");
-            ps.setString(1,id);
+            ps.setInt(1,id);
             rs=ps.executeQuery();
               while (rs.next()) {
   
-               l.setIdlivre(rs.getString(1));
-               l.setDesign(rs.getString(2));
-               l.setExemplaire(rs.getInt(3));
+               l.setIdlivre(rs.getInt(1));
+               l.setDesign(rs.getString(3));
+               l.setExemplaire(rs.getInt(4));
             
             }
         }finally{
@@ -63,10 +63,9 @@ public class LivreDao {
     public void add(Livre l)throws Exception {
          try{
                 Databases.getConnecion();
-                PreparedStatement ps = Databases.preparedQuerry("INSERT into livre values(?,?,?)");
-                ps.setString(1, l.getIdlivre());
-                ps.setString(2, l.getDesign());
-                ps.setInt(3, l.getExemplaire());
+                PreparedStatement ps = Databases.preparedQuerry("INSERT into livre (designation, exemplaire) values(?,?)");
+                ps.setString(1, l.getDesign());
+                ps.setInt(2, l.getExemplaire());
                 ps.executeUpdate();
                 
          }finally{
@@ -78,7 +77,7 @@ public class LivreDao {
         Databases.getConnecion();
         try{
             PreparedStatement ps= Databases.preparedQuerry("UPDATE  livre set  designation=?,exemplaire=? WHERE idlivre=?");
-            ps.setString(3, l.getIdlivre());
+            ps.setInt(3, l.getIdlivre());
             ps.setString(1, l.getDesign());
             ps.setInt(2, l.getExemplaire());
             ps.executeUpdate();
@@ -87,11 +86,11 @@ public class LivreDao {
         }
     }
     
-    public void delete(String id) throws Exception{ 
+    public void delete(int id) throws Exception{ 
         Databases.getConnecion();
         try{
             PreparedStatement ps= Databases.preparedQuerry("DELETE FROM livre where idlivre=?");
-            ps.setString(1, id);
+            ps.setInt(1, id);
             ps.executeUpdate();
         }finally{
             Databases.closeConnection();

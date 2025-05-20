@@ -16,7 +16,7 @@ import Controllers.PreterController;
  *
  * @author Thierry Christophe
  */
-@WebServlet(name = "PreterRouter", urlPatterns = {"/Preter"})
+@WebServlet(name = "PreterRouter", urlPatterns = {"/Preter/*"})
 public class PreterRouter extends HttpServlet {
 
     /**
@@ -57,7 +57,14 @@ public class PreterRouter extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //   processRequest(request, response);
+         String url=request.getRequestURI();
+          if(url.equals("/Bibliotheque/Preter"))
+           PreterController.getAdd(request, response);
+       
+       else {
+              // MembreController.get(request, response);
+       }   
     }
 
     /**

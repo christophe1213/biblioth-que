@@ -21,6 +21,17 @@
             <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageMembre/UpdateMembreModal.jsp</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageLivre/UpdateModalLivre.jsp</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Header.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/Preter.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Controllers/PreterController.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/LivreDao.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/Databases.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/Livre.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/Preter.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/PreterDao.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/MembreDao.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/AjoutEmprunt.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Router/PreterRouter.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Router/RendreRouter.java</file>
         </group>
     </open-files>
 </project-private>

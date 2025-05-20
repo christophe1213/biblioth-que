@@ -7,22 +7,38 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 public class Preter {
 
+    /**
+     * @return the nb
+     */
+    public int getNb() {
+        return nb;
+    }
+
+    /**
+     * @param nb the nb to set
+     */
+    public void setNb(int nb) {
+        this.nb = nb;
+    }
+
 
     private String idPret;
     private String idpers;
     private String idlivre;
     private LocalDateTime datePres;
     private LocalDate dateRetour;
-    
+    private int nb;
     public Preter(){
         
     }
-    public Preter(String idP, String idPers,String idLivre, LocalDateTime dp,LocalDate dr ){
+    public Preter(String idP, String idPers,String idLivre, LocalDateTime dp,LocalDate dr,int n ){
         idPret=idP;
         idpers=idPers;
         idlivre=idLivre;
         datePres=dp;
         dateRetour=dr;
+        nb=n;
+        
     }
     /**
      * @return the idPret

@@ -18,27 +18,63 @@ import Models.PreterDao;
 import Models.LivreDao;
 import Models.Livre;
 
+
 public class PreterController {
     
-     public static void postRequest(HttpServletRequest request, HttpServletResponse response)
+    public static void getAdd(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException{
+          
+        List<Livre> livres = new ArrayList<Livre>(); 
+            try{
+                livres= new LivreDao().getAll();                
+             }catch(Exception e){
+                 System.out.println("error de "+e.getMessage());
+                 request.setAttribute("error", e.getMessage());
+             }
+        request.setAttribute("livres", livres);
+        request.getRequestDispatcher("/WEB-INF/View/AjoutEmprunt.jsp").forward(request, response);
+         
+    } 
+    public static void postRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
              PrintWriter out = response.getWriter();
             try{              
                 String idpret=request.getParameter("idPret");
                 String idpers=request.getParameter("idpers");
                 String idlivre=request.getParameter("idlivre");
+                String nb=request.getParameter("nb");
                 LocalDateTime datpres=LocalDateTime.parse(request.getParameter("datePret"));
                 LocalDate dateRetour=LocalDate.parse(request.getParameter("dateRetour"));
                 PreterDao  preterService= new PreterDao();
-                Livre l = new LivreDao().getById(idlivre);
-                if(l.getExemplaire()-1<0){
-                    out.print("nombre de livre insuiffisant"+l.getDesign());
-                    return;
+                String[] tab = idlivre.split(",");
+                String [] Tabnb=nb.split(",");
+                for(int i =0;tab.length>i;i++)
+                {
+                        Livre l = new LivreDao().getById(Integer.parseInt(tab[i]));
+                
+                        if(l.getExemplaire()-Integer.parseInt(Tabnb[i])<0){
+                            out.print("nombre de livre insuiffisant"+l.getDesign());
+                           return;
+                        }
+                    
+                      //  out.print("success");
+
                 }
-                preterService.add(new Preter(idpret,idpers,idlivre,datpres,dateRetour));
-                new LivreDao().update(l);
-                out.print("success");
-            }catch(Exception e){
+                  for(int i =0;tab.length>i;i++)
+                {
+                        Livre l = new LivreDao().getById(Integer.parseInt(tab[i]));
+                         
+                          l.setExemplaire(l.getExemplaire()-Integer.parseInt(Tabnb[i]));
+                          preterService.add(new Preter(idpret,idpers,tab[i],datpres,dateRetour,Integer.parseInt(Tabnb[i])));
+                          new LivreDao().update(l);
+                        
+
+                        }
+                        out.println("success");
+                    
+
+               
+                            }catch(Exception e){
                 out.println("error: "+e.getMessage());
             }
     }
