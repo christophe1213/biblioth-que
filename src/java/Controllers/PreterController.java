@@ -17,6 +17,8 @@ import Models.Preter;
 import Models.PreterDao;
 import Models.LivreDao;
 import Models.Livre;
+import Models.Membre;
+import Models.MembreDao;
 
 
 public class PreterController {
@@ -25,13 +27,16 @@ public class PreterController {
     throws ServletException, IOException{
           
         List<Livre> livres = new ArrayList<Livre>(); 
-            try{
-                livres= new LivreDao().getAll();                
-             }catch(Exception e){
-                 System.out.println("error de "+e.getMessage());
-                 request.setAttribute("error", e.getMessage());
-             }
+        List<Membre> membres = new ArrayList<Membre>();    
+        try{
+            livres= new LivreDao().getAll();
+            membres= new MembreDao().getAll();                                
+         }catch(Exception e){
+            System.out.println("error de "+e.getMessage());
+            request.setAttribute("error", e.getMessage());
+         }
         request.setAttribute("livres", livres);
+        request.setAttribute("membres", membres);
         request.getRequestDispatcher("/WEB-INF/View/AjoutEmprunt.jsp").forward(request, response);
          
     } 

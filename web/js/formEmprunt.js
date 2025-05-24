@@ -35,11 +35,7 @@
         const livreSelect=[]
         
        
-        const user=[
-            {id:"140", name:'rabe'},
-            {id:"141",name:'jao'},
-            {id:"250",name:'p'},
-        ]
+      
         const filterBook=(query)=>{
             const matches= livres.filter(l=>l.titre.toLowerCase().includes(query))
             return matches

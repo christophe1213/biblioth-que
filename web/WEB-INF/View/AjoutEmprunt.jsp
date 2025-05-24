@@ -1,10 +1,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"  %>
 <%@page import="Models.Livre" %>
+<%@page import="java.util.List"  %>
+<%@page import="Models.Membre"  %>
 
 <%
       List<Livre> livres=  (List<Livre>)request.getAttribute("livres");
       livres=  (List<Livre>)request.getAttribute("livres");
+       List<Membre> membres=  (List<Membre>)request.getAttribute("membres");
+      membres=  (List<Membre>)request.getAttribute("membres");
       String error = (String)request.getAttribute("error");
       
 %>
@@ -32,7 +36,7 @@
                         for(Livre livre:livres){
                 
                  %>
-                  { id:'<%=livre.getIdLivre()%>', code:"<%=livre.getDesign()%>", titre:"<%=livre.getDesign()%>",
+                  { id:'<%=livre.getIdLivre()%>', code:"<%=livre.getCodeLivre()%>", titre:"<%=livre.getDesign()%>",
 
                   },
                 <%
@@ -40,7 +44,15 @@
                     }
                 %>
             ]; 
-             
+              const user=[
+                 <%
+                    if(membres!=null)
+                        for(Membre membre:membres){
+                    %>
+                    {id:"<%=membre.getIdpers()%>",name:"<%=membre.getNom()%>"},
+                
+                <%}%>
+                ]
             console.log(livres)
             </script>
          <script src="js/formEmprunt.js"></script>
