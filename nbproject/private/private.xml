@@ -32,6 +32,15 @@
             <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/AjoutEmprunt.jsp</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Router/PreterRouter.java</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Router/RendreRouter.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Test/DataLivre.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Service/RecuPret.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/Rendre.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Service/FormatDate.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/css/main.css</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Emprunt/FormEmprunt.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/js/dateNow.js</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/AddEmprunt.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/js/formEmprunt.js</file>
         </group>
     </open-files>
 </project-private>

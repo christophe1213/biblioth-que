@@ -32,7 +32,7 @@ public class LivreController {
             throws ServletException, IOException {
             List<Livre> livres = new ArrayList<Livre>(); 
             try{
-                livres= new LivreDao().getAll();                
+                 livres= new LivreDao().getAll();                
              }catch(Exception e){
                  System.out.println("error de "+e.getMessage());
                  request.setAttribute("error", e.getMessage());
@@ -68,7 +68,7 @@ public class LivreController {
             int idLivre=Integer.parseInt(request.getParameter("idlivre"));
             int exemplaire = Integer.parseInt(request.getParameter("exemplaire"));
             LivreDao livreService = new LivreDao();
-            livreService.update(new Livre(idLivre,design,exemplaire));
+            livreService.update(new Livre(design,exemplaire));
             out.print("success");
         }catch(Exception e){
             out.println(e.getMessage());        

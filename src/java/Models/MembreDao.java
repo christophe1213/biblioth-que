@@ -31,6 +31,27 @@ public class MembreDao {
     }
         return membres; 
    }
+   
+   public Membre getMembreByid(String id){
+        Membre p=new Membre();
+        ResultSet rs = null;
+        Databases.getConnecion();
+        try{
+            PreparedStatement ps= Databases.preparedQuerry("SELECT  * FROM Membre where idpers=?");
+            ps.setString(1, id);
+            rs=ps.executeQuery();
+           while(rs.next()){
+               p.setIdpers(rs.getString("idpres"));
+               p.setNom(rs.getString("nom"));
+               p.setAge(rs.getInt("age"));
+               p.setContact(rs.getString(4));
+               p.setEmail(rs.getString(5));
+               
+           }
+        }finally{
+            return p;
+        }
+   }
    public void add(Membre m)throws Exception{
         Databases.getConnecion();
         try{

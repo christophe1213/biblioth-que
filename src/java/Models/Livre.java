@@ -9,19 +9,23 @@ package Models;
  * @author Thierry Christophe
  */
 public class Livre {
+
+   
     private int idlivre;
     
     private String design="";
+    private String codelivre="";
     private int exemplaire=0;
-
+    
     /**
      * @return the idlivre
      */
     public Livre(){
         
     }
-    public Livre(int id, String d,int e){
+    public Livre(int id,String c, String d,int e){
         idlivre=id;
+        codelivre=c;
         design=d;
         exemplaire=e;
     }
@@ -29,17 +33,30 @@ public class Livre {
         design=d;
         exemplaire=e;
     }
-    public int getIdlivre() {
+    public int getIdLivre() {
         return idlivre;
     }
 
     /**
      * @param idlivre the idlivre to set
      */
-    public void setIdlivre(int idlivre) {
+    public void setIdLivre(int idlivre) {
         this.idlivre = idlivre;
     }
+ /**
+     * @return the codelivre
+     */
+    public String getCodeLivre() {
+        return codelivre;
+    }
 
+    /**
+     * @param codelivre the codelivre to set
+     */
+    public void setCodeLivre(String codelivre) {
+        this.codelivre = codelivre;
+    }
+    
     /**
      * @return the design
      */

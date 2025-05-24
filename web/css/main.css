@@ -38,3 +38,49 @@
             margin-left: 250px;
             padding-top: 80px;
         }
+        
+      body {
+            background-color: #f8f9fa; /* Equivalent to Tailwind's bg-gray-50 */
+            min-height: 100vh;
+        }
+
+        .custom-border {
+            border-bottom: 1px solid #dee2e6; /* Equivalent to border-gray-200 */
+        }
+
+        .font-pacifico {
+            font-family: 'Pacifico', cursive;
+        }
+
+        .rounded-button {
+            border-radius: 8px; /* Equivalent to Tailwind's rounded-button */
+        }
+
+        .text-primary-custom {
+            color: #4361ee;
+        }
+
+        .text-secondary-custom {
+            color: #3f37c9;
+        }
+         .fw-medium {
+            font-weight: 500;
+        }
+          input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .date-input::-webkit-calendar-picker-indicator {
+        background: transparent;
+        bottom: 0;
+        color: transparent;
+        cursor: pointer;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+    }

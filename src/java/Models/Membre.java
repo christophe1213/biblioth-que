@@ -7,13 +7,28 @@ package Models;
 public class Membre {
 
     /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /**
      * @return the idpers
      */
     private String idpers="";
     private String nom="";
     private String sexe="";
-    private int age=0;
+    private int age=4;
     private String contact="";
+    private String email="";
     
     public Membre(){
         

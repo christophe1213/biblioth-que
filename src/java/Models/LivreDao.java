@@ -19,16 +19,18 @@ public class LivreDao {
         Databases.getConnecion();
         ResultSet rs = null;
         
-        
+        int i=0;
         try{
             rs= Databases.querry("SELECT *  from livre");
             while (rs.next()) {
   
                 int id=rs.getInt(1);
-                String design=rs.getString(2);
-                int e=rs.getInt(3);
-                Livre l = new Livre(id,design,e);
+                String code=rs.getString(2);
+                String design=rs.getString(3);
+                int e=rs.getInt(4);
+                Livre l = new Livre(id,code,design,e);
                 livres.add(l);
+                i++;
             
             }
             

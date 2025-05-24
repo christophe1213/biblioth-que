@@ -21,19 +21,19 @@
                         for(Livre livre:livres){
                     %>
                    <tr>
-                            <td><%=livre.getIdlivre()%></td>
+                            <td><%=livre.getCodeLivre()%></td>
                             <td><%=livre.getDesign()%></td>
                             <td><%=livre.getExemplaire() %></td>
                             <td>
                               <button class="btn btn-sm btn-success me-2" 
                                  data-bs-toggle="modal" data-bs-target="#update"     
                                  onclick="setDataUpdate(
-                                             '<%=livre.getIdlivre()%>',
+                                             '<%=livre.getIdLivre()%>',
                                              '<%=livre.getDesign()%>',
                                              <%=livre.getExemplaire()%>,
                                              )""
                                  >Modifier</button>
-                              <button class="btn btn-sm btn-danger" id=""  onclick="deleteLivre('<%=livre.getIdlivre()%>')">Supprimer</button>
+                              <button class="btn btn-sm btn-danger" id=""  onclick="deleteLivre('<%=livre.getIdLivre()%>')">Supprimer</button>
                             </td>
                     </tr>
                  
