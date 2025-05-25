@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 public class LivreDao {
     
     public LivreDao(){
@@ -21,7 +22,7 @@ public class LivreDao {
         
         int i=0;
         try{
-            rs= Databases.querry("SELECT *  from livre");
+            rs= Databases.querry("SELECT *  from livre  order by designation Asc");
             while (rs.next()) {
   
                 int id=rs.getInt(1);
@@ -53,7 +54,7 @@ public class LivreDao {
             rs=ps.executeQuery();
               while (rs.next()) {
   
-               l.setIdlivre(rs.getInt(1));
+               l.setIdLivre(rs.getInt(1));
                l.setDesign(rs.getString(3));
                l.setExemplaire(rs.getInt(4));
             
@@ -79,7 +80,7 @@ public class LivreDao {
         Databases.getConnecion();
         try{
             PreparedStatement ps= Databases.preparedQuerry("UPDATE  livre set  designation=?,exemplaire=? WHERE idlivre=?");
-            ps.setInt(3, l.getIdlivre());
+            ps.setInt(3, l.getIdLivre());
             ps.setString(1, l.getDesign());
             ps.setInt(2, l.getExemplaire());
             ps.executeUpdate();
@@ -98,4 +99,6 @@ public class LivreDao {
             Databases.closeConnection();
         }
     }
+    
+
 }

@@ -119,6 +119,12 @@
         autocomplete(livreSearch,resultatList,livres,filterBook,event)
         autocomplete(membreSearch,suggestions,user,filterMembre,eventInputCartMembre)
         
+        //  String idpers=request.getParameter("idpers");
+        //         String idlivre=request.getParameter("idlivre");
+        //         String nb=request.getParameter("nb");
+        //      String   idpret=idlivre;
+        //         LocalDateTime datpres=LocalDateTime.parse(request.getParameter("datePret"));
+            //  LocalDate dateRetour=LocalDate.parse(request.getParameter("dateRetour"));
          let forms={
                 idlivre:'',
                 idpers:'',
@@ -133,7 +139,7 @@
             let dateEmprunt= new Date(data.datePres)
             let nb=parseInt(document.getElementById('duree-pret').value)
             dateEmprunt.setDate(dateEmprunt.getDate()+nb)
-            data={...data,livres:livreSelect,membre:membreAdd,dateRetoure:new Date(dateEmprunt).toISOString()}
+            data={...data,livres:livreSelect,membre:membreAdd,dateRetoure:formatDateYYYMMDD(new Date(dateEmprunt))}
            
             console.log(data)
 
@@ -162,4 +168,16 @@
             console.log(forms)
 
 
+        }
+
+        const addEmprunt=async()=>{
+            try{
+                const data= new URLSearchParams(forms)
+                console.log(data)
+                const r = await api.post("Preter/add",data)
+                console.log(r)
+            }catch(e){
+                console.log(e)
+            }
+            
         }

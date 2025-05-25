@@ -7,18 +7,20 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class PreterDao {
 
     public  void add(Preter p)throws Exception{
         Databases.getConnecion();
         try{
-            PreparedStatement ps= Databases.preparedQuerry("INSERT INTO  preter VALUES(?,?,?,?,?)");          
+            PreparedStatement ps= Databases.preparedQuerry("INSERT INTO  preter VALUES(?,?,?,?,?,?)");          
             ps.setString(1, p.getIdPret());
             ps.setString(2, p.getIdpers());
             ps.setString(3, p.getIdlivre() );
             ps.setObject(4, p.getDatePres());
             ps.setObject(5, p.getDateRetour());
+            ps.setObject(6, p.getNb());
             ps.executeUpdate();
         }finally{
             Databases.closeConnection();
@@ -50,5 +52,20 @@ public class PreterDao {
         }finally{
             Databases.closeConnection();
         }
-    } 
+    }
+    
+        
+    public String idGenerate(){
+        String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        int longueur = 10;
+        StringBuilder sb = new StringBuilder();
+        Random rand = new Random();
+
+        for (int i = 0; i < longueur; i++) {
+            int index = rand.nextInt(caracteres.length());
+            sb.append(caracteres.charAt(index));
+        }
+         String chaineAleatoire = sb.toString();
+         return chaineAleatoire;
+    }
 }

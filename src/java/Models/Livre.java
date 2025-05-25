@@ -13,7 +13,7 @@ public class Livre {
    
     private int idlivre;
     
-    private String design="";
+    private String design="l";
     private String codelivre="";
     private int exemplaire=0;
     

@@ -13,12 +13,14 @@ import java.time.LocalDateTime;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import  java.util.List;
+
 import Models.Preter;
 import Models.PreterDao;
 import Models.LivreDao;
 import Models.Livre;
 import Models.Membre;
 import Models.MembreDao;
+import Service.FormatDate;
 
 
 public class PreterController {
@@ -44,15 +46,17 @@ public class PreterController {
             throws ServletException, IOException {
              PrintWriter out = response.getWriter();
             try{              
-                String idpret=request.getParameter("idPret");
+            //    String idpret=request.getParameter("idPret");
                 String idpers=request.getParameter("idpers");
                 String idlivre=request.getParameter("idlivre");
                 String nb=request.getParameter("nb");
-                LocalDateTime datpres=LocalDateTime.parse(request.getParameter("datePret"));
+                LocalDateTime datpres=LocalDateTime.parse(request.getParameter("datePres"));
                 LocalDate dateRetour=LocalDate.parse(request.getParameter("dateRetour"));
                 PreterDao  preterService= new PreterDao();
                 String[] tab = idlivre.split(",");
                 String [] Tabnb=nb.split(",");
+                String idpret=preterService.idGenerate();
+
                 for(int i =0;tab.length>i;i++)
                 {
                         Livre l = new LivreDao().getById(Integer.parseInt(tab[i]));
@@ -68,9 +72,10 @@ public class PreterController {
                   for(int i =0;tab.length>i;i++)
                 {
                         Livre l = new LivreDao().getById(Integer.parseInt(tab[i]));
-                         
+                          int n= Integer.parseInt(Tabnb[i]);
                           l.setExemplaire(l.getExemplaire()-Integer.parseInt(Tabnb[i]));
-                          preterService.add(new Preter(idpret,idpers,tab[i],datpres,dateRetour,Integer.parseInt(Tabnb[i])));
+                          preterService.add(new Preter(idpret,idpers,tab[i],datpres,dateRetour,n));
+                          System.out.println(Integer.parseInt(Tabnb[i]));
                           new LivreDao().update(l);
                         
 
