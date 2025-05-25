@@ -207,8 +207,8 @@
       </div>
 
       <div class="modal-footer">
-        <button type="button btn" onclick="addEmprunt()" class="btn btn-primary">Valider l'emprunt</button>
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <button type="button btn" id="btn-api"  class="btn btn-primary"><span id="span_loading"> Valider l'emprunt</span></button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">fermer</button>
       </div>
 
     </div>

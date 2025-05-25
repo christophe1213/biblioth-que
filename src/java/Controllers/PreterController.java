@@ -41,7 +41,12 @@ public class PreterController {
         request.setAttribute("membres", membres);
         request.getRequestDispatcher("/WEB-INF/View/AjoutEmprunt.jsp").forward(request, response);
          
-    } 
+    }
+    
+    public static void getData(HttpServletRequest request, HttpServletResponse response)
+     throws ServletException, IOException{
+        
+    }
     public static void postRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
              PrintWriter out = response.getWriter();
@@ -80,11 +85,11 @@ public class PreterController {
                         
 
                         }
-                        out.println("success");
+                        out.print("{\"status\":\"ok\",\"idFact\":\""+idpret+"\"}");
                     
 
                
-                            }catch(Exception e){
+                }catch(Exception e){
                 out.println("error: "+e.getMessage());
             }
     }

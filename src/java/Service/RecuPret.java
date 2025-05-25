@@ -105,7 +105,7 @@ public class RecuPret extends HttpServlet {
                 for(int i =0;i<tab.length;i++){
                     
                     Livre l = new LivreDao().getById(Integer.parseInt(tab[i])) ;
-                    table.addCell(addCell("L"+l.getIdlivre()));
+                    table.addCell(addCell("L"));
                     table.addCell(addCell(l.getDesign()));
                     table.addCell(addCell(Tabnb[i]));
                     
@@ -142,7 +142,64 @@ public class RecuPret extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+          response.setContentType("application/pdf");
+        response.setHeader("Content-Disposition", "attachment; filename=\"generated.pdf\""); 
+        Document document = new Document();
+         try  {
+                
+                String idpret=request.getParameter("idPret");
+                String idpers=request.getParameter("idpers");
+                String idlivre=request.getParameter("idlivre");
+          
+                String nb=request.getParameter("nb");
+                
+                LocalDateTime datpres=LocalDateTime.parse(request.getParameter("datePret"));
+                LocalDate dateRetour=LocalDate.parse(request.getParameter("dateRetour"));
+             
+                String[] tab = idlivre.split(",");
+                String [] Tabnb=nb.split(",");
+                Membre m= new MembreDao().getMembreByid(idpers);
+                
+                OutputStream out = response.getOutputStream();
+                System.out.println("PDF generate ...");
+                PdfWriter.getInstance(document, out);
+                document.open();
+                document.add(new Paragraph("Info membre:"));
+                document.add(new Paragraph("Nom: "+m.getNom()));
+                document.add(new Paragraph("Age : "+m.getAge()+" ans"));
+                document.add(new Paragraph("sexe : "+m.getSexe()));
+                document.add(new Paragraph("contact"+m.getContact()+"\n \n"));
+                PdfPTable table = new PdfPTable(3);
+                table.addCell(new PdfPCell(new Paragraph("Code Livre")));
+                table.addCell(new PdfPCell(new Paragraph("Intitulé ")));
+                table.addCell(new PdfPCell(new Paragraph("nombre preter")));
+                for(int i =0;i<tab.length;i++){
+                    
+                    Livre l = new LivreDao().getById(Integer.parseInt(tab[i])) ;
+                    table.addCell(addCell("L"));
+                    table.addCell(addCell(l.getDesign()));
+                    table.addCell(addCell(Tabnb[i]));
+                    
+                }
+            
+                document.add(table);
+                
+                document.add(new Paragraph("Prêté le : "+FormatDate.formatDMMMyyy(datpres)+"\n"));
+                document.add(new Paragraph("Doit être rendu le :  "+FormatDate.formatDMMMyyy(dateRetour)+"\n"));
+//document.add(new Paragraph("Relevet de note \n."));
+        } catch (DocumentException e) {
+            e.printStackTrace();
+            System.out.println("echec generate pdf ..");
+        } catch (Exception ex) {
+            Logger.getLogger(RecuPret.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if(document.isOpen()){
+                document.close();
+                System.out.println("success generate");
+            } 
+               
+            else System.out.println("error generate");
+        }
     }
 
     /**

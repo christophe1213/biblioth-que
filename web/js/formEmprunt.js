@@ -174,10 +174,73 @@
             try{
                 const data= new URLSearchParams(forms)
                 console.log(data)
-                const r = await api.post("Preter/add",data)
-                console.log(r)
+                return await api.post("Preter/add",data)
+                
             }catch(e){
                 console.log(e)
             }
             
         }
+
+
+    const addEmpruntBack=()=>{
+          
+            let span= document.getElementById('span_loading')
+            span.className="spinner-border text-light"
+            
+            span.innerHTML=''
+            const loading= ()=> setTimeout(async()=>{
+                const r= await addEmprunt()
+                console.log(JSON.parse(r))
+                const t= JSON.parse(r)
+                if(t.status==="ok"){
+                    span.innerHTML='imprimer en pdf'
+                    forms={...forms,idPret:t.idFact}
+                }else{
+                    alert('verifier votre données')
+                    span.innerHTML='Valider votre emprunt'
+                }
+                span.className="text-write"
+                
+                console.log('loadi')
+            },2000)
+            loading()
+            clearTimeout(loading)
+    }
+    
+
+    const generatePdf=()=>{
+        let span= document.getElementById('span_loading')
+        span.className="spinner-border text-light"
+            
+        span.innerHTML=''
+        const loading=()=>setTimeout(async()=>{
+            try{
+                const data= new URLSearchParams(forms)
+                const r = await api.post('RecuPret',data)
+                console.log(r)
+            }catch(e){
+                console.log(e)
+            }finally{
+                span.className="text-write"
+                span.innerHTML="ok"
+            }
+          
+            
+        },1000)
+        loading()
+        clearTimeout(loading)
+    }
+    
+    let btnApi= document.getElementById('btn-api')
+       btnApi.addEventListener('click',()=>{
+        
+            let span= document.getElementById('span_loading')                
+            if(span.innerHTML=="imprimer en pdf")generatePdf();
+            else if(span.innerHTML=="ok"){
+                window.location.reload();
+            }
+            else     addEmpruntBack()
+       })
+
+    
