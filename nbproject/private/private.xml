@@ -45,6 +45,11 @@
             <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/SideBar.jsp</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Emprunt/EmpruntView.jsp</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/Emprunt.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Emprunt/TableEmprunt.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/css/Table.css</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/js/autocomplet.js</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/js/fetchCustomers.js</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/NavBar.jsp</file>
         </group>
     </open-files>
 </project-private>

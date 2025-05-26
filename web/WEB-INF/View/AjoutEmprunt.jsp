@@ -55,6 +55,6 @@
                 ]
             console.log(livres)
             </script>
-         <script src="js/formEmprunt.js"></script>
+         <script src="<%=request.getContextPath()%>/js/formEmprunt.js"></script>
     </body>
 </html>

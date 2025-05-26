@@ -191,6 +191,7 @@
             span.innerHTML=''
             const loading= ()=> setTimeout(async()=>{
                 const r= await addEmprunt()
+                console.log(r)
                 console.log(JSON.parse(r))
                 const t= JSON.parse(r)
                 if(t.status==="ok"){

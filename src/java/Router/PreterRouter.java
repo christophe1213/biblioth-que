@@ -59,13 +59,13 @@ public class PreterRouter extends HttpServlet {
             throws ServletException, IOException {
         //   processRequest(request, response);
          String url=request.getRequestURI();
-          if(url.equals("/Bibliotheque/Preter"))
+          if(url.equals("/Bibliotheque/Preter/add"))
            PreterController.getAdd(request, response);
        
-          else if(url.equals("/Bibliotheque/Preter/get")) {
-              PreterController.getData(request, response);
+          else if(url.equals("/Bibliotheque/Preter")) {
+              PreterController.get(request, response);
        }   else {
-            PreterController.getData(request, response);
+            PreterController.get(request, response);
        }
     }
 

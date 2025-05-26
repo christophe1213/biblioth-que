@@ -214,5 +214,5 @@
     </div>
   </div>
     </div>
-<script src="js/autocomplet.js"></script>
-<script src="js/dateNow.js"></script>
+<script src="<%=request.getContextPath()%>/js/autocomplet.js"></script>
+<script src="<%=request.getContextPath()%>/js/dateNow.js"></script>

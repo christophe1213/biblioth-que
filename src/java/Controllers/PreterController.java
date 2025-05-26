@@ -44,7 +44,7 @@ public class PreterController {
          
     }
     
-    public static void getData(HttpServletRequest request, HttpServletResponse response)
+    public static void get(HttpServletRequest request, HttpServletResponse response)
      throws ServletException, IOException{
              List<Preter>prets = new ArrayList<Preter>();
              try{
@@ -63,7 +63,8 @@ public class PreterController {
     public static void postRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
              PrintWriter out = response.getWriter();
-            try{              
+            try{  
+                Databases.getConnecion();
             //    String idpret=request.getParameter("idPret");
                 String idpers=request.getParameter("idpers");
                 String idlivre=request.getParameter("idlivre");
@@ -75,12 +76,16 @@ public class PreterController {
                 String [] Tabnb=nb.split(",");
                 String idpret=preterService.idGenerate();
 
+                 if (idpers == null || idlivre == null || nb == null ) {
+                    out.print("{\"status\":\"no ok\",\"message\":\" paramettre maquant\"}");
+                    return;
+                 }
                 for(int i =0;tab.length>i;i++)
                 {
                         Livre l = new LivreDao().getById(Integer.parseInt(tab[i]));
                 
                         if(l.getExemplaire()-Integer.parseInt(Tabnb[i])<0){
-                            out.print("nombre de livre insuiffisant"+l.getDesign());
+                            out.print("{\"status\":\"no ok\",\"message\":\" solde insuiffisant"+tab[i]+"\"}");
                            return;
                         }
                     
@@ -104,6 +109,8 @@ public class PreterController {
                
                 }catch(Exception e){
                 out.println("error: "+e.getMessage());
+            }finally{
+                Databases.closeConnection();
             }
     }
      

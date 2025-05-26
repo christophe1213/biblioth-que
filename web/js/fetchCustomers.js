@@ -1,3 +1,4 @@
+const host='http://localhost:8080/Bibliotheque/' 
 const fetchCustomers = ()=>{
     const fetchData=async(url,method,data='')=>{
         
@@ -10,7 +11,7 @@ const fetchCustomers = ()=>{
         if(method!='GET')options.body=data.toString()
    
     
-        const r = await fetch(url,options)
+        const r = await fetch(host+url,options)
         if(r.ok) return r.text()
             else throw new Error('Erreur de url')
         }       
