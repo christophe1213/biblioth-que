@@ -16,7 +16,7 @@
               </tr>
             </thead>
             
-            <tbody>
+            <tbody id="tablePreter" >
                  <jsp:include page="EmpruntView.jsp"/>
             </tbody>
           </table>

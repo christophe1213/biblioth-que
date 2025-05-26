@@ -1,11 +1,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
   <div class="sidebar">
-        <a href="Membre" class="link-sidebar" >Membres</a>
-        <a href="Livre" class="link-sidebar">Livres</a>
-        <a href="Preter" class="link-sidebar" >Emprunt</a>
-        <a href="#" class="link-sidebar">Rendu</a>
-        <a href="#" class="link-sidebar">Retards des Membres</a>
-        <a href="#" class="link-sidebar">Historiques</a>
+        <a href="<%=request.getContextPath()%>/Membre" class="link-sidebar" >Membres</a>
+        <a href="<%=request.getContextPath()%>/Livre" class="link-sidebar">Livres</a>
+        <a href="<%=request.getContextPath()%>/Preter" class="link-sidebar" >Emprunt</a>
+        <a href="<%=request.getContextPath()%>/Rendre" class="link-sidebar">Rendu</a>
+        <a href="<%=request.getContextPath()%>/Retardaire" class="link-sidebar">Retards des Membres</a>
+        <a href="<%=request.getContextPath()%>/Historiques" class="link-sidebar">Historiques</a>
      
  </div>
  <script>

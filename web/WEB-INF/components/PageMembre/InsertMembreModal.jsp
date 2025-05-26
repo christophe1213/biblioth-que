@@ -65,6 +65,7 @@
     const data= new URLSearchParams(formData)
     console.log(data)
     addMembre(data)
+     getMembre()
     })
 </script>
      

@@ -26,6 +26,15 @@
                             <td><%=FormatDate.formatDDMMyyyy(pret.getDatePres())%></td>
                             <td><%=FormatDate.formatDDMMyyyy(pret.getDateRetour())%></td>
                             <td>
+                                   <button class="btn btn-sm btn-danger me-2"
+                                    onclick="deleteEmprunt('<%=pret.getIdPret()%>')"
+                                   >
+                                        <div class="w-8 h-8 flex items-center justify-center">
+                                            <i class="ri-delete-bin-line"></i>
+                                        </div>
+                                    </button>
+                             </td>
+                            <td>
                     </tr>
                  
                      <%

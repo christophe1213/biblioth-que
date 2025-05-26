@@ -43,7 +43,7 @@ public class MembreController {
                 int age=Integer.parseInt(request.getParameter("age"));
                 MembreDao membreService= new MembreDao();
                 membreService.add(new Membre(idpers,nom,sexe,age,contact));
-                out.print("success add");
+                out.print("success");
             }catch(Exception e){
                 out.println("error: "+e.getMessage());
             }

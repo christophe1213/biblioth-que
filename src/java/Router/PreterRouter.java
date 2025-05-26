@@ -64,8 +64,8 @@ public class PreterRouter extends HttpServlet {
        
           else if(url.equals("/Bibliotheque/Preter")) {
               PreterController.get(request, response);
-       }   else {
-            PreterController.get(request, response);
+       }   else if(url.equals("/Bibliotheque/Preter/get")) {
+            PreterController.getData(request, response);
        }
     }
 
@@ -80,7 +80,14 @@ public class PreterRouter extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       PreterController.postRequest(request, response);
+      // PreterController.postRequest(request, response);
+       String url=request.getRequestURI();
+       if(url.equals("/Bibliotheque/Preter/add"))
+           PreterController.getAdd(request, response);
+       else if(url.equals("/Bibliotheque/Preter/delete"))
+           PreterController.deleteRequest(request, response);
+      
+      
     }
 
     @Override

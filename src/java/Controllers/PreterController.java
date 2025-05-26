@@ -60,6 +60,24 @@ public class PreterController {
                     Databases.closeConnection();
              }
     }
+    
+    public static void getData(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException{
+         List<Preter>prets = new ArrayList<Preter>();
+             try{
+                 Databases.getConnecion();
+                 prets = new PreterDao().getAll();
+                 
+             }catch(Exception e){
+                   System.out.println(e.getMessage());
+                   e.printStackTrace();
+             }finally{
+                   request.setAttribute("prets", prets);
+                    request.getRequestDispatcher("/WEB-INF/components/Emprunt/EmpruntView.jsp").forward(request, response);
+                    Databases.closeConnection();
+             }
+        
+    }
     public static void postRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
              PrintWriter out = response.getWriter();
@@ -140,9 +158,10 @@ public class PreterController {
                 String idpret=request.getParameter("idPret");
                 PreterDao  preterService= new PreterDao();
                 preterService.delete(idpret);
-                out.print("success"+idpret);
+                out.print("success");
             }catch(Exception e){
-                out.println("error: "+e.getMessage());
+                out.println("error: xx"+e.getMessage());
+                e.printStackTrace();
             }
     }
 }
