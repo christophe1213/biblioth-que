@@ -41,11 +41,11 @@ public class MembreDao {
             ps.setString(1, id);
             rs=ps.executeQuery();
            while(rs.next()){
-               p.setIdpers(rs.getString("idpres"));
+               p.setIdpers(rs.getString("idpers"));
                p.setNom(rs.getString("nom"));
                p.setAge(rs.getInt("age"));
-               p.setContact(rs.getString(4));
-               p.setEmail(rs.getString(5));
+               p.setContact(rs.getString("sexe"));
+               p.setEmail(rs.getString("email"));
                System.out.println("j'suis dans la methode membres");
                
            }

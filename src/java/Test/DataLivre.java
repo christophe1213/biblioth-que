@@ -13,7 +13,7 @@ public class DataLivre {
     public void main(String[] args) {
         Livre[] livres = new Livre[10];
 
-        livres[0] = new Livre(1, "Programmation Java", 5);
+      /*  livres[0] = new Livre(1, "Programmation Java", 5);
         livres[1] = new Livre(2, "Bases de données", 3);
         livres[2] = new Livre(3, "Réseaux informatiques", 4);
         livres[3] = new Livre(4, "Systèmes d'exploitation", 6);
@@ -24,8 +24,8 @@ public class DataLivre {
         livres[8] = new Livre(9, "Machine Learning", 4);
         livres[9] = new Livre(10, "Intelligence Artificielle", 5);
         // Affichage des livres
-        
-        for (Livre livre : livres) {
+        */
+       /* for (Livre livre : livres) {
             try{
                 new LivreDao().update(livre);
             }catch(Exception e){
@@ -34,5 +34,8 @@ public class DataLivre {
                 
             }
         }
+*/
     }
+    
+    
 }

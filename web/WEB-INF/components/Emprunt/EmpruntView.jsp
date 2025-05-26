@@ -21,13 +21,14 @@
                         for(Preter pret:prets){
                     %>
                    <tr>
-                            <td><%=pret.getIdpers()%></td>
+                            <td><%=pret.membre.getNom()%></td>
                             <td><%=pret.livre.getDesign()%></td>
                             <td><%=FormatDate.formatDDMMyyyy(pret.getDatePres())%></td>
                             <td><%=FormatDate.formatDDMMyyyy(pret.getDateRetour())%></td>
                             <td>
                                    <button class="btn btn-sm btn-danger me-2"
-                                    onclick="deleteEmprunt('<%=pret.getIdPret()%>')"
+                                    onclick="setIdDelete('<%=pret.getIdPret()%>')"
+                                    data-bs-toggle="modal" data-bs-target="#deleteModal"
                                    >
                                         <div class="w-8 h-8 flex items-center justify-center">
                                             <i class="ri-delete-bin-line"></i>

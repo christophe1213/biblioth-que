@@ -5,6 +5,7 @@
     <body>
         <jsp:include page="../components/NavBar.jsp" />
         <jsp:include page="../components/SideBar.jsp"/>
+        <jsp:include page="../components/Emprunt/DeleteModal.jsp"/>
         <script src="js/api/PreterApi.js"></script>
          <div class="content">
 
