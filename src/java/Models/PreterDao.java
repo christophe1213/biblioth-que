@@ -5,12 +5,41 @@
 package Models;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class PreterDao {
 
+       public List<Preter>getAll() throws Exception {
+        List<Preter> prets = new ArrayList<>();
+        ResultSet rs = null;
+        try{
+            rs= Databases.querry("SELECT *  from  preter order by datepret DESC");
+            while (rs.next()) {
+               String id=rs.getString(1);
+               String idlivre=rs.getString(2);
+               String idpers=rs.getString(3);
+               
+               int nb=rs.getInt(6);
+               Timestamp ts = rs.getTimestamp(4); // colonne de date de prêt
+               LocalDateTime datePret = (ts != null) ? ts.toLocalDateTime() : null;
+               Date retour = rs.getDate(5);
+               LocalDate dateRetour = (retour != null) ? retour.toLocalDate() : null;
+               Preter p = new Preter(id,idlivre,idpers,datePret,dateRetour,nb);
+               prets.add(p);
+              
+            }
+        } finally {
+        return prets;
+    }
+        
+   }
+    
     public  void add(Preter p)throws Exception{
         Databases.getConnecion();
         try{

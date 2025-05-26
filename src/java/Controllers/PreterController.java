@@ -21,6 +21,7 @@ import Models.Livre;
 import Models.Membre;
 import Models.MembreDao;
 import Service.FormatDate;
+import Models.Databases;
 
 
 public class PreterController {
@@ -45,7 +46,19 @@ public class PreterController {
     
     public static void getData(HttpServletRequest request, HttpServletResponse response)
      throws ServletException, IOException{
-        
+             List<Preter>prets = new ArrayList<Preter>();
+             try{
+                 Databases.getConnecion();
+                 prets = new PreterDao().getAll();
+                 
+             }catch(Exception e){
+                   System.out.println(e.getMessage());
+                   e.printStackTrace();
+             }finally{
+                   request.setAttribute("prets", prets);
+                    request.getRequestDispatcher("/WEB-INF/View/Emprunt.jsp").forward(request, response);
+                    Databases.closeConnection();
+             }
     }
     public static void postRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

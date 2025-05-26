@@ -1,0 +1,44 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 26 mai 2025, 06:20:01
+    Author     : Thierry Christophe
+*/
+
+thead th{
+    position:sticky;
+    top: 0;
+    left: 0;
+    background-color: #d5d1defe;
+}
+
+.card_body{
+    max-height: calc(89%-.1.6rem);
+    background-color: #fffb;
+    border-radius: .6rem;
+    overflow:auto;
+    
+}
+.card_body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;            
+}
+.card_body::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+
+}
+.card_body:hover::-webkit-scrollbar-thumb{
+    visibility: visible;
+    
+}
+.custom-navbar{
+    display: none;
+}
+.navbar-vertical {
+    padding-top: 1rem;
+    height: 91.6vh;
+}

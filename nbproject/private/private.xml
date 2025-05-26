@@ -43,6 +43,8 @@
             <file>file:/D:/Test/TestJava/Bibliothèque/web/js/formEmprunt.js</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Controllers/RendreController.java</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/SideBar.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Emprunt/EmpruntView.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/Emprunt.jsp</file>
         </group>
     </open-files>
 </project-private>

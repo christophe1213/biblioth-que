@@ -28,8 +28,8 @@ public class Preter {
     private LocalDateTime datePres;
     private LocalDate dateRetour;
     private int nb;
-    private Livre livre;
-    private Membre membre;
+    public Livre livre;
+    public Membre membre;
     public Preter(){
         
     }
@@ -41,7 +41,7 @@ public class Preter {
         dateRetour=dr;
         nb=n;
         
-        membre = new MembreDao().getMembreByid(idpers);
+        membre = new MembreDao().getMembreByid(idPers);
         livre = new LivreDao().getById(Integer.parseInt(idLivre));
         
         

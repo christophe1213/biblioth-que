@@ -48,7 +48,7 @@ public class LivreDao {
         ResultSet rs = null;
 
         try{
-            Databases.getConnecion();
+           
             PreparedStatement ps = Databases.preparedQuerry("SELECT * FROM livre WHERE idlivre=?");
             ps.setInt(1,id);
             rs=ps.executeQuery();

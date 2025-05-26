@@ -16,6 +16,15 @@ public class FormatDate {
         DateTimeFormatter formater= DateTimeFormatter.ofPattern("d MMMM yyyy",Locale.FRENCH);
         return d.format(formater);
     }
+    
+    public static String formatDDMMyyyy(LocalDateTime d){
+         DateTimeFormatter formater= DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return d.format(formater);
+    }
+    public static String formatDDMMyyyy(LocalDate d){
+        LocalDateTime dt= d.atStartOfDay();
+        return formatDDMMyyyy(dt);
+    }
     public static String formatDMMMyyy(LocalDate d){
         LocalDateTime dt= d.atStartOfDay();
         return formatDMMMyyy(dt);

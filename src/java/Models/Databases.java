@@ -60,6 +60,7 @@ public class Databases {
          
     }
     public static void closeConnection(){
+        System.out.println("Ferméture de connection !");
         con=null;
     }
 }

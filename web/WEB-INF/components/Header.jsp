@@ -17,6 +17,7 @@
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/fetchCustomers.js"></script> 
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/css/main.css">
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/css/Table.css">
+        <script src="<%=request.getContextPath()%>/ js/fetchCustomers.js"></script> 
 </head>

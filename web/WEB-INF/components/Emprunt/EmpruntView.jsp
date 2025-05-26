@@ -1,0 +1,38 @@
+<%-- 
+    Document   : EmpruntVieiw
+    Created on : 25 mai 2025, 19:20:33
+    Author     : Thierry Christophe
+--%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.List"  %>
+<%@page import="Models.Preter"  %>
+<%@page import="Models.PreterDao"  %>
+<%@page import="Service.FormatDate"  %>
+<%
+      List<Preter> prets=  (List<Preter>)request.getAttribute("prets");
+      prets=  (List<Preter>)request.getAttribute("prets");
+      String error = (String)request.getAttribute("error");
+       prets=  (List<Preter>)request.getAttribute("prets");
+     //  prets= new PreterDao().getAll();
+%>
+
+ <%
+                    
+                        for(Preter pret:prets){
+                    %>
+                   <tr>
+                            <td><%=pret.getIdpers()%></td>
+                            <td><%=pret.livre.getDesign()%></td>
+                            <td><%=FormatDate.formatDDMMyyyy(pret.getDatePres())%></td>
+                            <td><%=FormatDate.formatDDMMyyyy(pret.getDateRetour())%></td>
+                            <td>
+                    </tr>
+                 
+                     <%
+                
+                        
+                    }
+            %>
+  
+        
+        

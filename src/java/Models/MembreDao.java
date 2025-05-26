@@ -35,7 +35,7 @@ public class MembreDao {
    public Membre getMembreByid(String id){
         Membre p=new Membre();
         ResultSet rs = null;
-        Databases.getConnecion();
+       
         try{
             PreparedStatement ps= Databases.preparedQuerry("SELECT  * FROM Membre where idpers=?");
             ps.setString(1, id);
@@ -46,9 +46,12 @@ public class MembreDao {
                p.setAge(rs.getInt("age"));
                p.setContact(rs.getString(4));
                p.setEmail(rs.getString(5));
+               System.out.println("j'suis dans la methode membres");
                
            }
+           System.out.println("membre"+p.getNom()+" id= "+id);
         }finally{
+            System.out.println("methode membres");
             return p;
         }
    }

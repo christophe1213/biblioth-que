@@ -62,9 +62,11 @@ public class PreterRouter extends HttpServlet {
           if(url.equals("/Bibliotheque/Preter"))
            PreterController.getAdd(request, response);
        
-       else {
-              // MembreController.get(request, response);
-       }   
+          else if(url.equals("/Bibliotheque/Preter/get")) {
+              PreterController.getData(request, response);
+       }   else {
+            PreterController.getData(request, response);
+       }
     }
 
     /**
