@@ -39,3 +39,10 @@ function setDataUpdate(idLivre,design,exemplaire){
     console.log(idLivreInput)
     
 }
+function searchLivre(search=''){
+    let tbody=document.getElementById('employeeTableBody')
+    api.get(`Livre/get?search=${search}`).then((r)=>{
+        console.log("success")
+        tbody.innerHTML=r
+    }).catch((console.error()))
+}
