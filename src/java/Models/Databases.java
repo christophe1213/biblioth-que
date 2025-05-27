@@ -48,7 +48,8 @@ public class Databases {
              ps = con.prepareStatement(q);
              rs = ps.executeQuery();
         }catch(Exception e){
-            System.out.println("error");
+            System.out.println("error requete ");
+            e.printStackTrace();
         }
         return rs;
         
