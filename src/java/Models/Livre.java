@@ -11,7 +11,7 @@ package Models;
 public class Livre {
 
    
-    private int idlivre;
+    private int idlivre=0;
     
     private String design="l";
     private String codelivre="";

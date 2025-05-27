@@ -7,15 +7,23 @@ public class Rendre {
     private String idpers;
     private String idlivre;
     private LocalDateTime dateRendu;
+    public Membre membre;
+    public Livre livre;
+    
     
     public Rendre(){
         
     }
-    public Rendre(String id, String idp,String idL,LocalDateTime d){
+    public Rendre(String id, String idp,String idL,LocalDateTime d) throws Exception{
         idRendu=id;
         idpers=idp;
         idlivre=idL;
         dateRendu=d;
+        
+        membre = new MembreDao().getMembreByid(idp);
+        livre = new LivreDao().getById(Integer.parseInt(idL));
+        
+            
     }
     
     /**

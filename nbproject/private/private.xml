@@ -3,57 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/index.html</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/Livre.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageLivre/InsertModalLivre.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Router/MembreRouter.java</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Controllers/MembreController.java</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Controllers/LivreController.java</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageMembre/MembreView.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageLivre/LivreView.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/Membre.java</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/Membre.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageMembre/TableMembre.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageLivre/TableLivre.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/js/api/Membre.js</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageMembre/InsertMembreModal.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageMembre/DeleteModalMembre.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageMembre/UpdateMembreModal.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageLivre/UpdateModalLivre.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Header.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/Preter.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Controllers/PreterController.java</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/LivreDao.java</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/Databases.java</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/Livre.java</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/Preter.java</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/PreterDao.java</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/MembreDao.java</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/AjoutEmprunt.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Router/PreterRouter.java</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Router/RendreRouter.java</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Test/DataLivre.java</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Service/RecuPret.java</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/Rendre.java</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Service/FormatDate.java</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/css/main.css</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Emprunt/FormEmprunt.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/js/dateNow.js</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/AddEmprunt.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/js/formEmprunt.js</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Controllers/RendreController.java</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/SideBar.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Emprunt/EmpruntView.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/Emprunt.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Emprunt/TableEmprunt.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/css/Table.css</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/js/autocomplet.js</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/js/fetchCustomers.js</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/NavBar.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/js/api/PreterApi.js</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Emprunt/DeleteModal.jsp</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Emprunt/UpdateModal.jsp</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/Rendre.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Controllers/RendreController.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Router/MembreRouter.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Router/RendreRouter.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Router/PreterRouter.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Controllers/MembreController.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Controllers/PreterController.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/RendreDao.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/PreterDao.java</file>
         </group>
     </open-files>
 </project-private>

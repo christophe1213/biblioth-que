@@ -65,14 +65,14 @@ public class LivreDao {
     }
     public void add(Livre l)throws Exception {
          try{
-                Databases.getConnecion();
+              ;
                 PreparedStatement ps = Databases.preparedQuerry("INSERT into livre (designation, exemplaire) values(?,?)");
                 ps.setString(1, l.getDesign());
                 ps.setInt(2, l.getExemplaire());
                 ps.executeUpdate();
                 
          }finally{
-             Databases.closeConnection(); 
+             
          }
     }
     
