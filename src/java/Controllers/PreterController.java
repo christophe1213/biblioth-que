@@ -141,9 +141,9 @@ public class PreterController {
                 String idlivre=request.getParameter("idlivre");
                 LocalDateTime datpres=LocalDateTime.parse(request.getParameter("datePret"));
                 LocalDate dateRetour=LocalDate.parse(request.getParameter("dateRetour"));
-                PreterDao  preterService= new PreterDao();
-              
-                preterService.update(new Preter(idpret,idpers,idlivre,datpres,dateRetour));
+                int nb = Integer.parseInt(request.getParameter("nb"));
+                PreterDao  preterService= new PreterDao();              
+                preterService.update(new Preter(idpret,idpers,idlivre,datpres,dateRetour,nb));
                 out.print("success");
             }catch(Exception e){
                 out.println("error: "+e.getMessage());

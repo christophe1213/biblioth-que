@@ -86,6 +86,9 @@ public class PreterRouter extends HttpServlet {
            PreterController.postRequest(request, response);
        else if(url.equals("/Bibliotheque/Preter/delete"))
            PreterController.deleteRequest(request, response);
+       else if(url.equals("/Bibliotheque/Preter/update")){
+           PreterController.putRequest(request, response);
+       }
       
       
     }

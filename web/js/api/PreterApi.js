@@ -3,7 +3,6 @@ function getEmprunt(){
     let tbody=document.getElementById('tablePreter')
     api.get('Preter/get').then((r)=>{
         console.log("success")
-        console.log(r)
         tbody.innerHTML=r
     }).catch((console.error()))
 }
@@ -26,15 +25,35 @@ function deleteEmprunt(id){
     // alert(idDelete)
 }
 
-
+function updDateEmprunt(formData){
+    api.post('Preter/update',formData).then((r)=>{
+        console.log(r)
+        if(r=="success")
+        {
+            getEmprunt()
+            var modalElement = document.getElementById('updateModal');
+            var modalInstance = bootstrap.Modal.getInstance(modalElement)
+           modalInstance.hide();
+        }
+         
+    }).catch((e)=>{ console.log(e)})
+}
 function setIdDelete(id){
     idDelete=id
 }
 
-function setDataEmpruntUpdate(dp,dr){
-    let datePInput=document.getElementById('datePIp')
-    let dateRInput=document.getElementById('dateRUp')
 
-    datePInput.value=dp
-    dateRInput.value=dr
+function setFormDataEmprunt(  idpret,idpers,name, livre, idlivre, dateEmprunt, dateRetour,nb ) {
+    // Récupérer les éléments du formulaire
+    
+    document.getElementById('idPret').value=idpret
+    document.getElementById('nameUpdate').value = name;
+    document.getElementById('idpers').value = idpers;
+
+    document.getElementById('livresUpdate').value = livre;
+    document.getElementById('idlivre').value = idlivre;
+
+    document.getElementById('date-emprunt-update').value = dateEmprunt;
+    document.getElementById('dateRetourUpdate').value = dateRetour;
+    document.getElementById('nb').value=nb
 }

@@ -3,10 +3,12 @@
 <html>
     <jsp:include page="../components/Header.jsp" />
     <body>
+        <script src="js/api/PreterApi.js"></script>
         <jsp:include page="../components/NavBar.jsp" />
         <jsp:include page="../components/SideBar.jsp"/>
         <jsp:include page="../components/Emprunt/DeleteModal.jsp"/>
-        <script src="js/api/PreterApi.js"></script>
+        <jsp:include page="../components/Emprunt/UpdateModal.jsp"/>
+      
          <div class="content">
 
              <div  class="section">

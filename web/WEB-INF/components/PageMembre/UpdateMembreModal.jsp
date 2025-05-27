@@ -14,6 +14,7 @@
             <h4 class="modal-title">Ajouter un membre</h4>
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
+      <a href="UpdateMembreModal.jsp"></a>
 
       <!--
       let idMembreInput=document.getElementById('idMembreUpdate')
