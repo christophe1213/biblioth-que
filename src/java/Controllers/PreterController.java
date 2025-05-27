@@ -66,6 +66,11 @@ public class PreterController {
          List<Preter>prets = new ArrayList<Preter>();
              try{
                  Databases.getConnecion();
+                 String start=request.getParameter("start");
+                 String end=request.getParameter("end");
+                 if(start!=null&&end!=null){
+                    prets = new PreterDao().getSearchBy2Date(start, end);
+                 }else
                  prets = new PreterDao().getAll();
                  
              }catch(Exception e){

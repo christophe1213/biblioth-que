@@ -15,11 +15,19 @@ import java.util.Random;
 
 public class PreterDao {
 
-       public List<Preter>getAll() throws Exception {
+    public List<Preter>getAll() throws Exception {
+        return select("SELECT *  from  preter order by datepret DESC");     
+    }
+    public List<Preter>getSearchBy2Date(String start,String end) throws Exception {
+        return select("SELECT * FROM preter WHERE datepret BETWEEN '"+start+"' and '"+end+"' order by datepret DESC");     
+    }
+    
+    
+    private List<Preter>select(String q) throws Exception {
         List<Preter> prets = new ArrayList<>();
         ResultSet rs = null;
         try{
-            rs= Databases.querry("SELECT *  from  preter order by datepret DESC");
+            rs= Databases.querry(q);
             while (rs.next()) {
                String id=rs.getString(1);
                String idlivre=rs.getString(2);
@@ -39,6 +47,7 @@ public class PreterDao {
     }
         
    }
+    
     
     public  void add(Preter p)throws Exception{
         Databases.getConnecion();
