@@ -18,12 +18,12 @@ public class FormatDate {
     }
     
     public static String formatDDMMyyyy(LocalDateTime d){
-         DateTimeFormatter formater= DateTimeFormatter.ofPattern("dd/MM/yyyy");
+         DateTimeFormatter formater= DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         return d.format(formater);
     }
     public static String formatDDMMyyyy(LocalDate d){
-        LocalDateTime dt= d.atStartOfDay();
-        return formatDDMMyyyy(dt);
+       DateTimeFormatter formater= DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return d.format(formater);
     }
     public static String formatDMMMyyy(LocalDate d){
         LocalDateTime dt= d.atStartOfDay();
