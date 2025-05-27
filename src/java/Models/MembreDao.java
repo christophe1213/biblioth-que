@@ -15,8 +15,7 @@ public class MembreDao {
        return select("Select * from membre");
     }
     
-     public List<Membre>getSearch(String i) throws Exception {
-         String item="c";
+     public List<Membre>getSearch(String item) throws Exception {
          System.out.print("search :"+item);
          return select("SELECT * from membre where idpers Like '%"+item+"%' or  nom LIKE '%"+item+"%' or sexe  Like '%"+item+"%' "
                 + "or contact Like '%"+item+"%' or email Like '%"+item+"%'");
