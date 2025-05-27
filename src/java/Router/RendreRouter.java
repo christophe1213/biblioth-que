@@ -88,6 +88,8 @@ public class RendreRouter extends HttpServlet {
        
           else if(url.equals("/Bibliotheque/Rendre/delete")) {
               RendreController.deleteRequest(request, response);
+          } else if(url.equals("/Bibliotheque/Rendre/update")) {
+              RendreController.putRequest(request, response);
           }
     }
 

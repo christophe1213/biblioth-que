@@ -20,7 +20,8 @@
                             <td><%=rendu.livre.getDesign()%></td>
                             <td><%=FormatDate.formatDDMMyyyy(rendu.getDateRendu())%></td>
                             <td>
-                                <button class="btn btn-success"
+                            
+             <button class="btn btn-success"
                                          data-bs-toggle="modal" data-bs-target="#updateModal" 
                                          onclick="setFormDataEmprunt(
                                                   '<%=rendu.getIdRendu()%>',
@@ -44,8 +45,7 @@
                                             <i class="ri-delete-bin-line"></i>
                                         </div>
                                     </button>
-                             </td>
-                            <td>
+                            </td>
                     </tr>
                  
                      <%

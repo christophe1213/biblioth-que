@@ -47,3 +47,16 @@
     </div>
   </div>
 </div>
+<script>
+    
+    document.getElementById('formUpd').addEventListener('submit',(e)=>{
+    e.preventDefault()
+    console.log(e.target)
+     const form =e.target
+    const formData= new FormData(form)
+    console.log(formData)
+    const data= new URLSearchParams(formData)
+     console.log(data)
+   updateRendu(data)
+    })
+</script>

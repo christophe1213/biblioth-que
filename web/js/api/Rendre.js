@@ -24,6 +24,19 @@ function getRendu(){
     }).catch((console.error()))
 }
 
+function updateRendu(formData){
+    api.post('Rendre/update',formData).then((r)=>{
+        console.log(r)
+        if(r=="success")
+        {
+            getRendu()
+            var modalElement = document.getElementById('updateModal');
+            var modalInstance = bootstrap.Modal.getInstance(modalElement)
+            modalInstance.hide();
+        }
+         
+    }).catch((e)=>{ console.log(e)})
+}
 function setIdDelete(id){
      idDelete=id
 }
