@@ -3,14 +3,16 @@
 <%@page import="Models.Rendre"  %>
 <%@page import="Models.RendreDao"  %>
 <%@page import="Service.FormatDate"  %>
+
 <%
-      List<Rendre> rendus=  (List<Rendre>)request.getAttribute("rendus");
+     List<Rendre> rendus=  (List<Rendre>)request.getAttribute("rendus");
       rendus=  (List<Rendre>)request.getAttribute("rendus");
-      String error = (String)request.getAttribute("error");
-      rendus=  (List<Rendre>)request.getAttribute("rendu");
-     //  prets= new PreterDao().getAll();
+     String error = (String)request.getAttribute("error");
+    
 %>
  <%
+                        
+                        if(rendus!=null)
                         for(Rendre rendu:rendus){
                     %>
                    <tr>
@@ -41,7 +43,8 @@
                      <%
                 
                         
-                    }
+                    }else
+                        out.print("data is null");
             %>
   
         

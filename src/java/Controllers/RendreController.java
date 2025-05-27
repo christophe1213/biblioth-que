@@ -27,7 +27,7 @@ import java.util.List;
  * @author Thierry Christophe
  */
 public class RendreController {
-    public static void get(HttpServletRequest request, HttpServletResponse response)
+    public static void getData(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException{
               List<Rendre>rendus = new ArrayList<Rendre>();
              try{
@@ -38,11 +38,30 @@ public class RendreController {
                    System.out.println(e.getMessage());
                    e.printStackTrace();
              }finally{
-                   request.setAttribute("rendus", rendus);
-                    request.getRequestDispatcher("/WEB-INF/View/Emprunt.jsp").forward(request, response);
+                    request.setAttribute("rendus", rendus);
+                    request.getRequestDispatcher("/WEB-INF/components/Rendre/RendreView.jsp").forward(request, response);
                     Databases.closeConnection();
              }
     }
+    
+    public static void get(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException{
+           List<Rendre>rendus = new ArrayList<Rendre>();
+             try{
+                 Databases.getConnecion();
+                 rendus = new RendreDao().getAll();
+                 
+             }catch(Exception e){
+                   System.out.println(e.getMessage());
+                   e.printStackTrace();
+             }finally{
+                    request.setAttribute("rendus", rendus);
+                    request.getRequestDispatcher("/WEB-INF/View/Rendre.jsp").forward(request, response);
+                    Databases.closeConnection();
+             }
+    }
+    
+    
     
      public static void postRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

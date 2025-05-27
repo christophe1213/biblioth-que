@@ -18,7 +18,7 @@ import Router.RendreRouter;
  *
  * @author Thierry Christophe
  */
-@WebServlet(name = "RendreRouter", urlPatterns = {"/Rendre"})
+@WebServlet(name = "RendreRouter", urlPatterns = {"/Rendre/*"})
 public class RendreRouter extends HttpServlet {
 
     /**
@@ -59,7 +59,15 @@ public class RendreRouter extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+         String url=request.getRequestURI();
+          if(url.equals("/Bibliotheque/Rendre/get"))
+           RendreController.getData(request, response);
+       
+          else if(url.equals("/Bibliotheque/Rendre")) {
+              RendreController.get(request, response);
+          }
+              
+       
     }
 
     /**
