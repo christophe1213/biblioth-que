@@ -54,3 +54,11 @@ function setDataMembreUpdate(id,nom,sexe,age,contact,email){
     emailInput.value=email
     
 }
+
+function searchMembre(search=''){
+    let tbody=document.getElementById('membreTbody')
+    api.get(`Membre/get?search=${search}`).then((r)=>{
+        console.log(search)
+        tbody.innerHTML=r
+    }).catch((console.error()))
+}

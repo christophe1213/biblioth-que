@@ -16,11 +16,19 @@
                         <h2>Liste des membres </h2>
                         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add">Ajouter</button>
                </div>
+                <div class="input-group">
+                        <span class="input-group-text bg-white">
+                               <i class="ri-search-line text-secondary"></i>
+                               <input type="text" class="form-control" placeholder="Rechercher un membre..." id="searchInput">
+                        </span>
+                                  
+                </div>
                 <div class="row">
                     <jsp:include page="../components/PageMembre/TableMembre.jsp"/>
                 </div>
             </div>
-        </div>       
+        </div> 
+     <script src="js/MembreManagement.js"></script>
      <script src="bootstrap/js/bootstrap.js"></script>
      <script>
          document.title="géstion des membres"
