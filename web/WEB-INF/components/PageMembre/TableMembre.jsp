@@ -19,6 +19,7 @@
             </thead>
            
             <tbody id="membreTbody">
+                  <jsp:include page="MembreView.jsp"/>
             </tbody>
           </table>
  </div>

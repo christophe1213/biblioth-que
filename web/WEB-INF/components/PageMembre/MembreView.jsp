@@ -12,7 +12,7 @@
       membres=  (List<Membre>)request.getAttribute("membres");
       String error = (String)request.getAttribute("error");
 %>
-         <tbody>
+      
               <!-- Contenu dynamique -->
                     <%
                     if(membres!=null)
@@ -47,4 +47,4 @@
                     }
             %>
   
-            </tbody>
+            

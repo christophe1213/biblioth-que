@@ -14,8 +14,27 @@ public class MembreController {
     
       public static void get(HttpServletRequest request, HttpServletResponse response)
          throws ServletException, IOException {
-            
-             request.getRequestDispatcher("/WEB-INF/View/Membre.jsp").forward(request, response);
+             List<Membre> membres = new ArrayList<Membre>(); 
+            try{
+                  String itemSearch=request.getParameter("search");
+                Databases.getConnecion();
+                if(request.getParameter("search")==null)
+                      membres= new MembreDao().getAll();
+                else{
+                 
+                     membres=new MembreDao().getSearch(itemSearch);
+                }
+                
+             }catch(Exception e){
+                 System.out.println("error de "+e.getMessage());
+                 e.printStackTrace();
+                 request.setAttribute("error", e.getMessage());
+             }finally{
+                 Databases.closeConnection();
+            }
+             request.setAttribute("membres", membres);
+          
+            request.getRequestDispatcher("/WEB-INF/View/Membre.jsp").forward(request, response);
              
 
     }
