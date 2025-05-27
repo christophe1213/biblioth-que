@@ -11,12 +11,27 @@ public class MembreDao {
        
    }
    
-   public List<Membre>getAll() throws Exception {
+    public List<Membre>getAll() throws Exception {
+       return select("Select * from membre");
+    }
+    
+     public List<Membre>getSearch(String i) throws Exception {
+         String item="c";
+         System.out.print("search :"+item);
+         return select("SELECT * from membre where idpers Like '%"+item+"%' or  nom LIKE '%"+item+"%' or sexe  Like '%"+item+"%' "
+                + "or contact Like '%"+item+"%' or email Like '%"+item+"%'");
+    }
+   
+   
+   
+
+   
+      private List<Membre>select(String querry) throws Exception {
         List<Membre> membres = new ArrayList<>();
-        Databases.getConnecion();
+      
         ResultSet rs = null;
         try{
-            rs= Databases.querry("SELECT *  from membre");
+            rs= Databases.querry(querry);
             while (rs.next()) {
                String id=rs.getString(1);
                String nom=rs.getString(2);
@@ -27,10 +42,11 @@ public class MembreDao {
                membres.add(m);
             }
         } finally {
-        Databases.closeConnection();
+      return membres; 
     }
-        return membres; 
+        
    }
+   
    
    public Membre getMembreByid(String id){
         Membre p=new Membre();
