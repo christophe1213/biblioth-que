@@ -4,6 +4,7 @@
  */
 package Controllers;
 
+import Models.Databases;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -32,11 +33,20 @@ public class LivreController {
             throws ServletException, IOException {
             List<Livre> livres = new ArrayList<Livre>(); 
             try{
-                 livres= new LivreDao().getAll();                
+                Databases.getConnecion();
+                String itemSearch=request.getParameter("search");
+                if(itemSearch==null)
+                     livres= new LivreDao().getAll();
+                else{
+                 
+                     livres=new LivreDao().getSearch(itemSearch);
+                }                
              }catch(Exception e){
                  System.out.println("error de "+e.getMessage());
                  request.setAttribute("error", e.getMessage());
-             }
+             }finally{
+                Databases.closeConnection();
+            }
              request.setAttribute("livres", livres);
              request.getRequestDispatcher("/WEB-INF/components/PageLivre/LivreView.jsp").forward(request, response);
              //request.getRequestDispatcher("WEB-INF/Test.jsp").forward(request,response);

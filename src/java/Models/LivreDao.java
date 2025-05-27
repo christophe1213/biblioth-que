@@ -15,6 +15,16 @@ public class LivreDao {
     }
     
     public List<Livre> getAll () throws Exception{
+        return select("SELECT * FROM livre");
+    }
+    
+    
+    public List<Livre> getSearch (String item) throws Exception{
+        return select("SELECT * FROM livre WHERE designation LIKE '%"+item+"%'  or codelivre LIKE '%"+item+"%'");
+    }
+    
+        
+    public List<Livre> select (String q) throws Exception{
         
         List<Livre> livres = new ArrayList<>();
         Databases.getConnecion();
@@ -22,7 +32,7 @@ public class LivreDao {
         
         int i=0;
         try{
-            rs= Databases.querry("SELECT *  from livre  order by designation Asc");
+            rs= Databases.querry(q);
             while (rs.next()) {
   
                 int id=rs.getInt(1);
@@ -36,13 +46,14 @@ public class LivreDao {
             }
             
         } finally {
-        Databases.closeConnection();
+           return livres;  
     }
 
       
         
-        return livres;  
+     
     }
+    
     public  Livre getById(int id) throws Exception{
         Livre l = new Livre();
         ResultSet rs = null;
