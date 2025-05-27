@@ -14,7 +14,7 @@
       
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-        <button type="button" onclick="" class="btn btn-danger" id="confirmDelete">Supprimer</button>
+        <button type="button" onclick="deleteRendu()" class="btn btn-danger" id="confirmDelete">Supprimer</button>
       </div>
 
     </div>

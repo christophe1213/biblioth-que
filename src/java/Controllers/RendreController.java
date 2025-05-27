@@ -113,7 +113,6 @@ public class RendreController {
              PrintWriter out = response.getWriter();
             try{              
                 String idrendu=request.getParameter("idrendu");
-                LocalDateTime datrendu=LocalDateTime.parse(request.getParameter("dateRendu"));
                 RendreDao  rendreService= new RendreDao();
                 rendreService.delete(idrendu);
                 out.print("success");

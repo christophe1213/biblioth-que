@@ -81,7 +81,14 @@ public class RendreRouter extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RendreController.postRequest(request, response);
+        
+         String url=request.getRequestURI();
+          if(url.equals("/Bibliotheque/Rendre/add"))
+          RendreController.postRequest(request, response);
+       
+          else if(url.equals("/Bibliotheque/Rendre/delete")) {
+              RendreController.deleteRequest(request, response);
+          }
     }
 
     @Override

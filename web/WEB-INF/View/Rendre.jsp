@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
   <jsp:include page="../components/Header.jsp" />
     <body>
-        <script src="js/api/PreterApi.js"></script>
+        <script src="js/api/Rendre.js"></script>
         <jsp:include page="../components/NavBar.jsp" />
         <jsp:include page="../components/SideBar.jsp"/>
         <jsp:include page="../components/Rendre/UpdateModal.jsp"/>

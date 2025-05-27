@@ -31,6 +31,7 @@
                                    <button class="btn btn-sm btn-danger me-2"
                                     
                                    data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                   onclick="setIdDelete('<%=rendu.getIdRendu()%>')"
                                    >
                                         <div class="w-8 h-8 flex items-center justify-center">
                                             <i class="ri-delete-bin-line"></i>
