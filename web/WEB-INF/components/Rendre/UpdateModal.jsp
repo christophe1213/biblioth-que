@@ -5,24 +5,35 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Modifier un Rendu</h4>
+        <h4 class="modal-title">Modification d'une Rendu</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
       <!-- Modal body -->
       <div class="modal-body">
           <form  id="formUpd"  method="POST">
+                <input type="hidden" class="form-control border-start-0 date-input" id="idrendu" name="idrendu" required>
                 <div class="mb-3 mt-3">
-                  <label  class="form-label">Id Livre</label>
-                  <input  id="idLivreUpdate" type="texte" class="form-control" placeholder="Enter email"  name="idlivre">
+                      <label for="date-emprunt" class="form-label">Nom <span class="text-danger">*</span></label>
+                          <div class="input-group">
+                              <input type="texte" class="form-control border-start-0 date-input"  id="nameUpdate"  value="names" disabled required>
+                              <input type="hidden" class="form-control border-start-0 date-input" id="idpers" name="idpers"  value="d" required>
+                      </div>
                 </div>
                 <div class="mb-3">
-                  <label class="form-label">Designation</label>
-                  <input id="designUpdate" type="texte" class="form-control" name="design">
+                      <label for="date-emprunt" class="form-label">Livre <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                   
+                                    <input type="texte" disabled class="form-control border-start-0 date-input" id="livresUpdate"  value="livres">
+                                    <input type="hidden" class="form-control border-start-0 date-input" id="idlivre" name="idlivre"  value="d" required>
+                                </div>
                 </div>
                 <div class="mb-3">
-                  <label class="form-label">nombre d'exemplaire</label>
-                  <input id="exemplaireUpdate" type="number" class="form-control"    name="exemplaire">
+                  <label for="date-emprunt" class="form-label">Date de Rendu <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-white border-end-0"><i class="ri-calendar-line text-secondary"></i></span>
+                                    <input type="datetime-local" class="form-control border-start-0 date-input" name="dateRendu" id="dateRendu-update" name="dateRendu" required >
+                                </div>
                 </div>
           <button type="submit" class="btn btn-primary">modifier</button>
         </form>
@@ -30,7 +41,7 @@
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">fermer</button>
       </div>
 
     </div>

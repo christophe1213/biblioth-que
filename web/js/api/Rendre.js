@@ -27,3 +27,18 @@ function getRendu(){
 function setIdDelete(id){
      idDelete=id
 }
+
+function setFormDataEmprunt(  idrendu,idpers,name, livre, idlivre, dateEmprunt) {
+    // Récupérer les éléments du formulaire
+    
+    document.getElementById('idrendu').value=idrendu
+    document.getElementById('nameUpdate').value = name;
+    document.getElementById('idpers').value = idpers;
+
+    document.getElementById('livresUpdate').value = livre;
+    document.getElementById('idlivre').value = idlivre;
+
+    document.getElementById('dateRendu-update').value = dateEmprunt;
+
+ 
+}

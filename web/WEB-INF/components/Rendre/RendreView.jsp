@@ -22,7 +22,14 @@
                             <td>
                                 <button class="btn btn-success"
                                          data-bs-toggle="modal" data-bs-target="#updateModal" 
-                                       
+                                         onclick="setFormDataEmprunt(
+                                                  '<%=rendu.getIdRendu()%>',
+                                                  '<%=rendu.membre.getIdpers()%>',
+                                                  '<%=rendu.membre.getNom()%>',
+                                                  '<%=rendu.livre.getDesign()%>',
+                                                  '<%=rendu.livre.getIdLivre()%>',
+                                                  '<%=rendu.getDateRendu()%>'
+                                                  )"
                                         >
                                         <div class="w-8 h-8 flex items-center justify-center">
                                             <i class="ri-edit-line"></i>
