@@ -14,7 +14,7 @@
 %>
 
             
-            <tbody>
+            
               <!-- Contenu dynamique -->
                     <%
                     if(livres!=null)
@@ -43,5 +43,4 @@
                     }
             %>
   
-            </tbody>
         

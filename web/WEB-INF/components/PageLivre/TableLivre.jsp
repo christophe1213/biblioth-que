@@ -5,7 +5,6 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
  <div class="table-responsive">
           <table class="table table-bordered table-striped">
             <thead class="table-dark">
@@ -18,6 +17,7 @@
             </thead>
             
             <tbody id="employeeTableBody">
+                <jsp:include page="LivreView.jsp"/>
             </tbody>
           </table>
  </div>

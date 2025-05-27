@@ -22,7 +22,18 @@ public class LivreController {
      
     public static void get(HttpServletRequest request, HttpServletResponse response)
          throws ServletException, IOException {
-   
+         List<Livre> livres = new ArrayList<Livre>(); 
+            try{
+                Databases.getConnecion();
+                String itemSearch=request.getParameter("search");
+                livres= new LivreDao().getAll();
+             }catch(Exception e){
+                 System.out.println("error de "+e.getMessage());
+                 request.setAttribute("error", e.getMessage());
+             }finally{
+                Databases.closeConnection();
+            }
+             request.setAttribute("livres", livres);
              request.getRequestDispatcher("/WEB-INF/View/Livre.jsp").forward(request, response);
         
 
