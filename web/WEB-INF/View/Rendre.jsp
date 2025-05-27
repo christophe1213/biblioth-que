@@ -10,7 +10,8 @@
         <script src="js/api/PreterApi.js"></script>
         <jsp:include page="../components/NavBar.jsp" />
         <jsp:include page="../components/SideBar.jsp"/>
-       
+        <jsp:include page="../components/Rendre/UpdateModal.jsp"/>
+        <jsp:include page="../components/Rendre/DeleteModal.jsp"/>
       
          <div class="content">
 

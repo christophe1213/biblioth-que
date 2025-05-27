@@ -12,6 +12,17 @@
             <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Controllers/PreterController.java</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/RendreDao.java</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/PreterDao.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Rendre/RendreView.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/Rendre.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/Preter.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/js/api/PreterApi.js</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/LivreDao.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/Livre.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Service/FormatDate.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/Preter.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/Emprunt.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Rendre/TableRendus.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Emprunt/TableEmprunt.jsp</file>
         </group>
     </open-files>
 </project-private>
