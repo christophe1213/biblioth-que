@@ -57,3 +57,12 @@ function setFormDataEmprunt(  idpret,idpers,name, livre, idlivre, dateEmprunt, d
     document.getElementById('dateRetourUpdate').value = dateRetour;
     document.getElementById('nb').value=nb
 }
+
+function searchBy2Date(start='',end=''){
+    let tbody=document.getElementById('tablePreter')
+    api.get(`Preter/get?start=${start}&end=${end}`).then((r)=>{
+        console.log("success")
+        tbody.innerHTML=r
+    }).catch((console.error()))
+
+}
