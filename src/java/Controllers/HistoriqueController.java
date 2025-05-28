@@ -1,0 +1,51 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Controllers;
+
+import Models.Databases;
+import Models.Preter;
+import Models.PreterDao;
+import Models.Membre;
+import Models.MembreDao;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+
+/**
+ *
+ * @author Thierry Christophe
+ */
+public class HistoriqueController {
+     public static void getHistoriquePres(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+      //  processRequest(request, response);
+      List<Preter>prets = new ArrayList<Preter>();
+      
+             try{
+                 PrintWriter out = response.getWriter();
+                 String id = request.getParameter("id");
+                 if(id==null){
+                     out.println("id not define");
+                     return;
+                 }
+                 Databases.getConnecion();
+                 prets = new MembreDao().getMembreByid(id).getHistoriquePres();
+                 
+             }catch(Exception e){
+                   System.out.println(e.getMessage());
+                   e.printStackTrace();
+             }finally{
+                    request.setAttribute("prets", prets);
+                    request.getRequestDispatcher("/WEB-INF/components/Emprunt/EmpruntView.jsp").forward(request, response);
+                    Databases.closeConnection(); 
+             }
+        
+    }
+}

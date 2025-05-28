@@ -13,6 +13,13 @@
             <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Emprunt/TableEmprunt.jsp</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageLivre/LivreView.jsp</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageLivre/TableLivre.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/Emprunt.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/AjoutEmprunt.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/js/Preter.js</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/js/api/PreterApi.js</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/Membre.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Router/Historique.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Router/LivreRouter.java</file>
         </group>
     </open-files>
 </project-private>

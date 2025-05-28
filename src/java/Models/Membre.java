@@ -4,6 +4,8 @@
  */
 package Models;
 
+import java.util.List;
+
 public class Membre {
 
     /**
@@ -41,6 +43,10 @@ public class Membre {
         contact=c;
     }
     
+    
+    public List<Preter>getHistoriquePres() throws Exception {
+        return new  PreterDao().select(" SELECT *  from  preter WHERE idpers='"+idpers+"' order by datepret DESC");     
+    }
     
     public String getIdpers() {
         return idpers;

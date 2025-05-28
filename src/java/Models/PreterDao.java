@@ -23,7 +23,7 @@ public class PreterDao {
     }
     
     
-    private List<Preter>select(String q) throws Exception {
+    public List<Preter>select(String q) throws Exception {
         List<Preter> prets = new ArrayList<>();
         ResultSet rs = null;
         try{
