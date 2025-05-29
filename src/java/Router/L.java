@@ -4,20 +4,19 @@
  */
 package Router;
 
+import Controllers.HistoriqueController;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import Controllers.HistoriqueController;
+
 /**
  *
  * @author Thierry Christophe
  */
-@WebServlet(name = "Historique", urlPatterns = {"/Historique/*"})
-public class Historique extends HttpServlet {
+public class L extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,10 +35,10 @@ public class Historique extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Historique</title>");
+            out.println("<title>Servlet L</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Historique at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet L at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -57,7 +56,8 @@ public class Historique extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HistoriqueController.getHistoriquePres(request, response);
+        processRequest(request, response);
+      
     }
 
     /**

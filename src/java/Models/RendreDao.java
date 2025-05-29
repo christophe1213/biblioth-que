@@ -21,11 +21,15 @@ import java.util.Random;
 public class RendreDao {
     
     public List<Rendre>getAll(){
+        return select("SELECT *  from  rendre order by daterendu DESC;");    
+    }
+    
+        public List<Rendre>select(String q){
         
         List<Rendre> rendus = new ArrayList<>();
         ResultSet rs = null;
         try{
-            rs= Databases.querry("SELECT *  from  rendre order by daterendu DESC;");
+            rs= Databases.querry(q);
             while (rs.next()) {
                String id=rs.getString(1);
                String idlivre=rs.getString(2);
@@ -43,7 +47,6 @@ public class RendreDao {
         
         
     }
-    
     public  void add(Rendre r)throws Exception{
         Databases.getConnecion();
         try{

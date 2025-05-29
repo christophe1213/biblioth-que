@@ -9,6 +9,8 @@ import Models.Preter;
 import Models.PreterDao;
 import Models.Membre;
 import Models.MembreDao;
+import Models.Rendre;
+import Models.RendreDao;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -48,4 +50,28 @@ public class HistoriqueController {
              }
         
     }
+     
+    public static void getHistoriqueRecu(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException{
+              List<Rendre>rendus = new ArrayList<Rendre>();
+             try{
+                 PrintWriter out = response.getWriter();
+                 String id = request.getParameter("id");
+                 if(id==null){
+                     out.println("id not define");
+                     return;
+                 }
+                 Databases.getConnecion();
+                 rendus = new MembreDao().getMembreByid(id).getHistoriqueRecu();
+                 
+             }catch(Exception e){
+                   System.out.println(e.getMessage());
+                   e.printStackTrace();
+             }finally{
+                    request.setAttribute("rendus", rendus);
+                    request.getRequestDispatcher("/WEB-INF/components/Rendre/RendreView.jsp").forward(request, response);
+                    Databases.closeConnection();
+             }
+    }
+    
 }

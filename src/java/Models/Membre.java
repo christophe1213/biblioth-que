@@ -47,7 +47,9 @@ public class Membre {
     public List<Preter>getHistoriquePres() throws Exception {
         return new  PreterDao().select(" SELECT *  from  preter WHERE idpers='"+idpers+"' order by datepret DESC");     
     }
-    
+    public List<Rendre>getHistoriqueRecu() throws Exception{
+        return new RendreDao().select("SELECT *  from  rendre WHERE idpers='"+idpers+"' order by daterendu DESC;");    
+    }
     public String getIdpers() {
         return idpers;
     }
