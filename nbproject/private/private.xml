@@ -18,8 +18,13 @@
             <file>file:/D:/Test/TestJava/Bibliothèque/web/js/Preter.js</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/web/js/api/PreterApi.js</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/Membre.java</file>
-            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Router/Historique.java</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Router/LivreRouter.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/RendreDao.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Controllers/HistoriqueController.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Controllers/RendreController.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Router/L.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Router/HistoriqueController.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/HistoriquePret.jsp</file>
         </group>
     </open-files>
 </project-private>

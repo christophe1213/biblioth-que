@@ -28,8 +28,8 @@ public class HistoriqueController {
      public static void getHistoriquePres(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
       //  processRequest(request, response);
-      List<Preter>prets = new ArrayList<Preter>();
-      
+            List<Preter>prets = new ArrayList<Preter>();
+            Membre membre =new Membre();
              try{
                  PrintWriter out = response.getWriter();
                  String id = request.getParameter("id");
@@ -38,14 +38,16 @@ public class HistoriqueController {
                      return;
                  }
                  Databases.getConnecion();
-                 prets = new MembreDao().getMembreByid(id).getHistoriquePres();
+                 membre= new MembreDao().getMembreByid(id);
+                 prets = membre.getHistoriquePres();
                  
              }catch(Exception e){
                    System.out.println(e.getMessage());
                    e.printStackTrace();
              }finally{
                     request.setAttribute("prets", prets);
-                    request.getRequestDispatcher("/WEB-INF/components/Emprunt/EmpruntView.jsp").forward(request, response);
+                    request.setAttribute("membre", membre);
+                    request.getRequestDispatcher("/WEB-INF/View/HistoriquePret.jsp").forward(request, response);
                     Databases.closeConnection(); 
              }
         

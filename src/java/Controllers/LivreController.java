@@ -25,7 +25,7 @@ public class LivreController {
          List<Livre> livres = new ArrayList<Livre>(); 
             try{
                 Databases.getConnecion();
-                String itemSearch=request.getParameter("search");
+                
                 livres= new LivreDao().getAll();
              }catch(Exception e){
                  System.out.println("error de "+e.getMessage());
