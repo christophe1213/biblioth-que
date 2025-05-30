@@ -25,7 +25,7 @@
                                          data-bs-toggle="modal" data-bs-target="#updateModal" 
                                          onclick="setFormDataEmprunt(
                                                   '<%=rendu.getIdRendu()%>',
-                                                  '<%=rendu.membre.getIdpers()%>',
+                                                  '<%=rendu.membre.getId()%>',
                                                   '<%=rendu.membre.getNom()%>',
                                                   '<%=rendu.livre.getDesign()%>',
                                                   '<%=rendu.livre.getIdLivre()%>',
