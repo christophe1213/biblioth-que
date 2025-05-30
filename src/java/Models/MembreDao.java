@@ -55,7 +55,7 @@ public class MembreDao {
        
         try{
             PreparedStatement ps= Databases.preparedQuerry("SELECT  * FROM Membre where idpers=?");
-            ps.setString(1, id);
+            ps.setInt(1, Integer.parseInt(id));
             rs=ps.executeQuery();
            while(rs.next()){
                p.setNumMembre(rs.getString("idpers"));
@@ -107,7 +107,7 @@ public class MembreDao {
        Databases.getConnecion();
        try{
             PreparedStatement ps= Databases.preparedQuerry("DELETE FROM membre WHERE idpers=? ");
-            ps.setString(1, id);
+            ps.setInt(1, Integer.parseInt(id));
             ps.executeUpdate();
        }finally{
           Databases.closeConnection(); 

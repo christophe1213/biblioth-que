@@ -1,3 +1,4 @@
+let idDelete=''
 function getMembre(){
     let tbody=document.getElementById('membreTbody')
     api.get('Membre/get').then((r)=>{
@@ -20,13 +21,18 @@ async function updateMembre (d) {
     return api.post('Membre/update',d)
 
 }
-function deleteMembre(id){
+function deleteMembre(){
     const formData = new URLSearchParams();
-    console.log(id)
-    formData.append("idpers", id);
+    console.log(idDelete)
+    formData.append("idpers", idDelete);
     api.post('Membre/delete',formData).then((r)=>{
         console.log(r)
-        if(r=="success")getMembre()
+        if(r=="success"){
+               getMembre()
+            var modalElement = document.getElementById('deleteModal');
+            var modalInstance = bootstrap.Modal.getInstance(modalElement)
+            modalInstance.hide();
+        }
     }).catch((e)=>{ console.log(e)})
 }
 function setDataMembreUpdate(id,num,nom,sexe,age,contact,email){
@@ -59,4 +65,7 @@ function searchMembre(search=''){
         console.log(search)
         tbody.innerHTML=r
     }).catch((console.error()))
+}
+function setIdDelete(id){
+    idDelete=id
 }

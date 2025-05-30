@@ -44,8 +44,13 @@
                                              )""
                                              data-bs-toggle="modal" data-bs-target="#update"  
                                       ><i class="ri-pencil-line me-1"></i>Modifier</li>
-                                      <li><a class="dropdown-item text-danger" href="#"><i class="ri-delete-bin-line me-1"></i>Supprimer</a></li>
-                                      <li><a class="dropdown-item" href="historique.html?id=${membre.id}&type=emprunt"><i class="ri-book-open-line me-1"></i>Voir emprunts</a></li>
+                                      <li
+                                          data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                    onclick="setIdDelete('<%=membre.getId()%>')"
+                                     ><i class="ri-delete-bin-line me-1"></i>Supprimer</li>
+                                      <li><button class="dropdown-item btn btn-sm btn-outline-info me-1"
+                                               onclick=" window.location.href='<%=request.getContextPath()%>/Historique/pret/get?id=<%=membre.getId()%>'"   
+                                                  ><i class="ri-book-open-line me-1"></i>Voir emprunts</button></li>
                                       <li><a class="dropdown-item" href="historique.html?id=${membre.id}&type=rendu"><i class="ri-check-double-line me-1"></i>Voir rendus</a></li>
                                     </ul>
                                   </div>

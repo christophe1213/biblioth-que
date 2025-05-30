@@ -107,7 +107,7 @@ public class MembreController {
                 String idpers=request.getParameter("idpers");
                 MembreDao membreService= new MembreDao();
                 membreService.delete(idpers);
-                out.print("success delete"+idpers);
+                out.print("success");
             }catch(Exception e){
                 out.println("error: "+e.getMessage());
             }

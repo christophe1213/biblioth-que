@@ -22,7 +22,7 @@
                                 <button class="btn btn-success"
                                          data-bs-toggle="modal" data-bs-target="#updateModal" 
                                          onclick="setFormDataEmprunt('<%=pret.getIdPret()%>',
-                                                                '<%=pret.membre.getIdpers()%>',
+                                                                '<%=pret.membre.getId()%>',
                                                                 '<%=pret.membre.getNom()%>',
                                                                 '<%=pret.livre.getDesign()%>',
                                                                 '<%=pret.getIdlivre()%>',

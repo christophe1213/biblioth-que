@@ -8,7 +8,7 @@
         <jsp:include page="../components/SideBar.jsp"/>
         <jsp:include page="../components/PageMembre/InsertMembreModal.jsp"/>
         <jsp:include page="../components/PageMembre/UpdateMembreModal.jsp"/>
-
+         <jsp:include page="../components/PageMembre/DeleteModal.jsp"/>
          <div class="content">
         
             <div  class="section">

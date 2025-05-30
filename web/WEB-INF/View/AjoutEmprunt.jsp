@@ -49,7 +49,7 @@
                     if(membres!=null)
                         for(Membre membre:membres){
                     %>
-                    {id:"<%=membre.getIdpers()%>",name:"<%=membre.getNom()%>"},
+                    {id:"<%=membre.getId()%>",name:"<%=membre.getNom()%>"},
                 
                 <%}%>
                 ]
