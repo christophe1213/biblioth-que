@@ -59,8 +59,24 @@ public class Membre {
         contact=c;
         email=e;
     }
+       public Membre(int i,String n,String s,int a,String c,String e){
+        id=i;
+        nom=n;
+        sexe=s;
+        age=a;
+        contact=c;
+        email=e;
+    }
     
     public Membre(String n,String s,int a,String c,String e){
+        nom=n;
+        sexe=s;
+        age=a;
+        contact=c;
+        email=e;
+    }
+    public Membre(String num,String n,String s,int a,String c,String e){
+         numMembre=num;
         nom=n;
         sexe=s;
         age=a;

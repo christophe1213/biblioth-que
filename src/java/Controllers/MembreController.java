@@ -84,16 +84,17 @@ public class MembreController {
     public static void putRequest(HttpServletRequest request, HttpServletResponse response)
                         throws ServletException, IOException {
              PrintWriter out = response.getWriter();
-            try{              
-                String idpers=request.getParameter("idpers");
+            try{
+                int id=Integer.parseInt(request.getParameter("id"));
+                String num=request.getParameter("numMembre");
                 String nom=request.getParameter("nom");
                 String sexe=request.getParameter("sexe");
                 String contact=request.getParameter("contact");
                 int age=Integer.parseInt(request.getParameter("age"));
                 String email=request.getParameter("email");
                 MembreDao membreService= new MembreDao();
-                membreService.update(new Membre(nom,sexe,age,contact,email));
-                out.print("success pupdate");
+                membreService.update(new Membre(id,nom,sexe,age,contact,email));
+                out.print("success");
             }catch(Exception e){
                 out.println("error: "+e.getMessage());
             }

@@ -29,7 +29,7 @@
             </div>
         </div> 
      <script src="js/MembreManagement.js"></script>
-     <script src="bootstrap/js/bootstrap.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
      <script>
          document.title="géstion des membres"
      </script>

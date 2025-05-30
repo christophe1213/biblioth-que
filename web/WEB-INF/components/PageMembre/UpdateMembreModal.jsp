@@ -26,10 +26,15 @@
       -->
         <div class="modal-body">
           <form  id="formUpd"  method="POST">
+              <input type="hidden"  class="form-control border-start-0 date-input" id="idMembreUpdate" name="id" required>
                 <div class="mb-3 mt-3">
-                  <label  class="form-label">Id Membre</label>
-                  <input type="texte" id="idMembreUpdate" class="form-control" placeholder="id membre" name="idpers">
+                  <label  class="form-label">Num  Membre</label>
+                  <input type="texte" disabled id="numMembreUpdate"  class="form-control" placeholder="id membre" name="i" required="">
                 </div>
+                <!--div class="mb-3">
+                  <label class="form-label">Id</label>
+                  <input type="texte"  id="numMembreUpdate" class="form-control" name="i">
+                </div-->
                 <div class="mb-3">
                   <label class="form-label">Nom</label>
                   <input type="texte" id="nomUpdate" class="form-control" name="nom">
@@ -45,40 +50,32 @@
                         <label class="form-check-label" for="radio2"></label>
                       </div>
                 </div>
+              
+                <div class="mb-3">
+                  <label class="form-label">age</label>
+                  <input id="ageUpdate" type="number" class="form-control" placeholder="age" name="age">
+                </div>
                 <div class="mb-3">
                   <label class="form-label">contact</label>
                   <input id="contactUpdate" type="texte" class="form-control" placeholder="contact" name="contact">
                 </div>
                 <div class="mb-3">
-                  <label class="form-label">age</label>
-                  <input id="ageUpdate" type="number" class="form-control" placeholder="age" name="age">
+                  <label class="form-label">contact</label>
+                  <input id="emailUpdate" type="texte" class="form-control" placeholder="contact" name="email">
                 </div>
               
                         
               
               
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary">Envoyer</button>
         </form>
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">fermer</button>
       </div>
 
     </div>
   </div>
 </div>
-<script>
-    
-    document.getElementById('formUpd').addEventListener('submit',(e)=>{
-    e.preventDefault()
-    console.log(e.target)
-    const form =e.target
-    const formData= new FormData(form)
-    const data= new URLSearchParams(formData)
-    console.log(data)
-    updateMembre(data)
-    })
-</script>
-     

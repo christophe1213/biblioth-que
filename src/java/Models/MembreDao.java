@@ -91,12 +91,13 @@ public class MembreDao {
    public void update(Membre m) throws Exception{
        Databases.getConnecion();
        try{
-            PreparedStatement ps= Databases.preparedQuerry("UPDATE membre set nom=?,sexe=?,age=?,contact=? WHERE idpers=?");
-            ps.setString(5, m.getNumMembre());
+            PreparedStatement ps= Databases.preparedQuerry("UPDATE membre set nom=?,sexe=?,age=?,contact=? ,email=? WHERE idpers=?");
+            ps.setInt(6, m.getId());
             ps.setString(1, m.getNom());
             ps.setString(2,m.getSexe() );
             ps.setInt(3,m.getAge() );
             ps.setString(4, m.getContact());
+            ps.setString(5, m.getEmail());
             ps.executeUpdate();
        }finally{
           Databases.closeConnection(); 

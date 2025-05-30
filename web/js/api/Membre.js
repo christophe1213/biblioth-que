@@ -11,12 +11,13 @@ async function addMembre(d){
    
 } 
 async function updateMembre (d) {
-    try{
-        const r = await api.post('Membre/update',d)
-        console.log(r)
-    }catch(e){
-        console.log(e)
-    }
+    // try{
+    //     const r = await api.post('Membre/update',d)
+    //     console.log(r)
+    // }catch(e){
+    //     console.log(e)
+    // }
+    return api.post('Membre/update',d)
 
 }
 function deleteMembre(id){
@@ -28,8 +29,9 @@ function deleteMembre(id){
         if(r=="success")getMembre()
     }).catch((e)=>{ console.log(e)})
 }
-function setDataMembreUpdate(id,nom,sexe,age,contact,email){
+function setDataMembreUpdate(id,num,nom,sexe,age,contact,email){
     let idMembreInput=document.getElementById('idMembreUpdate')
+    let numMembreInput=document.getElementById('numMembreUpdate')
     let nomInput=document.getElementById('nomUpdate')
     let sexeMInput=document.getElementById('sexeM')
     let sexeFInput=document.getElementById('sexeF')
@@ -39,6 +41,7 @@ function setDataMembreUpdate(id,nom,sexe,age,contact,email){
 
 
     idMembreInput.value=id
+    numMembreInput.value=num
     nomInput.value=nom
     //sexeInput.value=sexe
     if(sexe=="M")sexeMInput.checked=true

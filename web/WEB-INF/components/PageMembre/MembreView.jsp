@@ -26,6 +26,29 @@
                             <td><%=membre.getContact() %></td>
                             <td><%=membre.getEmail() %></td>
                             <td>
+                                 <div class="dropdown">
+                                    <button class="btn btn-sm btn-outline-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      <i class="ri-settings-3-line"></i> ...
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                      <li
+                                        onclick="setDataMembreUpdate(
+                                             '<%=membre.getId()%>',
+                                             '<%=membre.getNumMembre()%>',
+                                             '<%=membre.getNom()%>',
+                                             '<%=membre.getSexe()%>',
+                                             <%=membre.getAge()%>,
+                                             '<%=membre.getContact()%>',
+                                             '<%=membre.getEmail()%>'
+                                                         
+                                             )""
+                                             data-bs-toggle="modal" data-bs-target="#update"  
+                                      ><i class="ri-pencil-line me-1"></i>Modifier</li>
+                                      <li><a class="dropdown-item text-danger" href="#"><i class="ri-delete-bin-line me-1"></i>Supprimer</a></li>
+                                      <li><a class="dropdown-item" href="historique.html?id=${membre.id}&type=emprunt"><i class="ri-book-open-line me-1"></i>Voir emprunts</a></li>
+                                      <li><a class="dropdown-item" href="historique.html?id=${membre.id}&type=rendu"><i class="ri-check-double-line me-1"></i>Voir rendus</a></li>
+                                    </ul>
+                                  </div>
                               <!--button class="btn btn-sm btn-success me-2" 
                                  data-bs-toggle="modal" data-bs-target="#update"     
                                  onclick="setDataMembreUpdate(
