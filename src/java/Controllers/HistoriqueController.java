@@ -56,7 +56,8 @@ public class HistoriqueController {
     public static void getHistoriqueRecu(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException{
               List<Rendre>rendus = new ArrayList<Rendre>();
-             try{
+              Membre membre =new Membre();
+              try{
                  PrintWriter out = response.getWriter();
                  String id = request.getParameter("id");
                  if(id==null){
@@ -64,14 +65,16 @@ public class HistoriqueController {
                      return;
                  }
                  Databases.getConnecion();
-                 rendus = new MembreDao().getMembreByid(id).getHistoriqueRecu();
+                 membre= new MembreDao().getMembreByid(id);
+                 rendus = membre.getHistoriqueRecu();
                  
              }catch(Exception e){
                    System.out.println(e.getMessage());
                    e.printStackTrace();
              }finally{
                     request.setAttribute("rendus", rendus);
-                    request.getRequestDispatcher("/WEB-INF/components/Rendre/RendreView.jsp").forward(request, response);
+                    request.setAttribute("membre", membre);
+                    request.getRequestDispatcher("/WEB-INF/View/HistoriqueRendu.jsp").forward(request, response);
                     Databases.closeConnection();
              }
     }

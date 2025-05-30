@@ -51,7 +51,7 @@
                                       <li><button class="dropdown-item btn btn-sm btn-outline-info me-1"
                                                onclick=" window.location.href='<%=request.getContextPath()%>/Historique/pret/get?id=<%=membre.getId()%>'"   
                                                   ><i class="ri-book-open-line me-1"></i>Voir emprunts</button></li>
-                                      <li><a class="dropdown-item" href="historique.html?id=${membre.id}&type=rendu"><i class="ri-check-double-line me-1"></i>Voir rendus</a></li>
+                                      <li><a class="dropdown-item" href="<%=request.getContextPath()%>/Historique/rendus/get?id=<%=membre.getId()%>'"><i class="ri-check-double-line me-1"></i>Voir rendus</a></li>
                                     </ul>
                                   </div>
                               <!--button class="btn btn-sm btn-success me-2" 
