@@ -9,6 +9,20 @@ import java.util.List;
 public class Membre {
 
     /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
      * @return the email
      */
     public String getEmail() {
@@ -23,9 +37,10 @@ public class Membre {
     }
 
     /**
-     * @return the idpers
+     * @return the numMembre
      */
-    private String idpers="";
+    private int id;
+    private String numMembre="";
     private String nom="";
     private String sexe="";
     private int age=4;
@@ -35,30 +50,40 @@ public class Membre {
     public Membre(){
         
     }
-    public Membre(String id,String n,String s,int a,String c){
-        idpers=id;
+    public Membre(int i,String num,String n,String s,int a,String c,String e){
+        id=i;
+        numMembre=num;
         nom=n;
         sexe=s;
         age=a;
         contact=c;
+        email=e;
+    }
+    
+    public Membre(String n,String s,int a,String c,String e){
+        nom=n;
+        sexe=s;
+        age=a;
+        contact=c;
+        email=e;
     }
     
     
     public List<Preter>getHistoriquePres() throws Exception {
-        return new  PreterDao().select(" SELECT *  from  preter WHERE idpers='"+idpers+"' order by datepret DESC");     
+        return new  PreterDao().select(" SELECT *  from  preter WHERE idpers='"+numMembre+"' order by datepret DESC");     
     }
     public List<Rendre>getHistoriqueRecu() throws Exception{
-        return new RendreDao().select("SELECT *  from  rendre WHERE idpers='"+idpers+"' order by daterendu DESC;");    
+        return new RendreDao().select("SELECT *  from  rendre WHERE idpers='"+numMembre+"' order by daterendu DESC;");    
     }
-    public String getIdpers() {
-        return idpers;
+    public String getNumMembre() {
+        return numMembre;
     }
 
     /**
-     * @param idpers the idpers to set
+     * @param numMembre the numMembre to set
      */
-    public void setIdpers(String idpers) {
-        this.idpers = idpers;
+    public void setNumMembre(String numMembre) {
+        this.numMembre = numMembre;
     }
 
     /**

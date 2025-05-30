@@ -17,7 +17,7 @@ public class MembreDao {
     
      public List<Membre>getSearch(String item) throws Exception {
          System.out.print("search :"+item);
-         return select("SELECT * from membre where idpers Like '%"+item+"%' or  nom LIKE '%"+item+"%' or sexe  Like '%"+item+"%' "
+         return select("SELECT * from membre where nummembre Like '%"+item+"%' or  nom LIKE '%"+item+"%' or sexe  Like '%"+item+"%' "
                 + "or contact Like '%"+item+"%' or email Like '%"+item+"%'");
     }
    
@@ -32,12 +32,14 @@ public class MembreDao {
         try{
             rs= Databases.querry(querry);
             while (rs.next()) {
-               String id=rs.getString(1);
-               String nom=rs.getString(2);
-               String sexe=rs.getString(3);
-               int age=rs.getInt(4);
-               String contact=rs.getString(5);
-               Membre m = new Membre(id,nom,sexe,age,contact);
+               int id=rs.getInt("idpers");
+               String numM=rs.getString("nummembre");
+               String nom=rs.getString("nom");
+               String sexe=rs.getString("sexe");
+               int age=rs.getInt("age");
+               String contact=rs.getString("contact");
+               String email=rs.getString("email");
+               Membre m = new Membre(id,numM,nom,sexe,age,contact,email);
                membres.add(m);
             }
         } finally {
@@ -56,7 +58,7 @@ public class MembreDao {
             ps.setString(1, id);
             rs=ps.executeQuery();
            while(rs.next()){
-               p.setIdpers(rs.getString("idpers"));
+               p.setNumMembre(rs.getString("idpers"));
                p.setNom(rs.getString("nom"));
                p.setAge(rs.getInt("age"));
                p.setContact(rs.getString("sexe"));
@@ -74,7 +76,7 @@ public class MembreDao {
         Databases.getConnecion();
         try{
             PreparedStatement ps= Databases.preparedQuerry("INSERT INTO  membre VALUES(?,?,?,?,?)");
-            ps.setString(1, m.getIdpers());
+            ps.setString(1, m.getNumMembre());
             ps.setString(2, m.getNom());
             ps.setString(3,m.getSexe());
             ps.setInt(4,m.getAge());
@@ -90,7 +92,7 @@ public class MembreDao {
        Databases.getConnecion();
        try{
             PreparedStatement ps= Databases.preparedQuerry("UPDATE membre set nom=?,sexe=?,age=?,contact=? WHERE idpers=?");
-            ps.setString(5, m.getIdpers());
+            ps.setString(5, m.getNumMembre());
             ps.setString(1, m.getNom());
             ps.setString(2,m.getSexe() );
             ps.setInt(3,m.getAge() );

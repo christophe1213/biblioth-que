@@ -14,6 +14,7 @@
                  <th>sexe</th>
                  <th>age</th>
                  <th>contact</th>
+                 <th>Email</th>
                 <th>Actions</th>
               </tr>
             </thead>

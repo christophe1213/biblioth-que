@@ -72,8 +72,9 @@ public class MembreController {
                 String sexe=request.getParameter("sexe");
                 String contact=request.getParameter("contact");
                 int age=Integer.parseInt(request.getParameter("age"));
+                String email=request.getParameter("email");
                 MembreDao membreService= new MembreDao();
-                membreService.add(new Membre(idpers,nom,sexe,age,contact));
+                membreService.add(new Membre(nom,sexe,age,contact,email));
                 out.print("success");
             }catch(Exception e){
                 out.println("error: "+e.getMessage());
@@ -89,8 +90,9 @@ public class MembreController {
                 String sexe=request.getParameter("sexe");
                 String contact=request.getParameter("contact");
                 int age=Integer.parseInt(request.getParameter("age"));
+                String email=request.getParameter("email");
                 MembreDao membreService= new MembreDao();
-                membreService.update(new Membre(idpers,nom,sexe,age,contact));
+                membreService.update(new Membre(nom,sexe,age,contact,email));
                 out.print("success pupdate");
             }catch(Exception e){
                 out.println("error: "+e.getMessage());
