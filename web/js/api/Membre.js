@@ -7,12 +7,7 @@ function getMembre(){
 }
 
 async function addMembre(d){
-    try{
-        const r = await api.post('Membre/add',d)
-        console.log(r)
-    }catch(e){
-        console.log(e)
-    }
+    return await api.post('Membre/add',d)
    
 } 
 async function updateMembre (d) {

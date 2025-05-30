@@ -67,7 +67,7 @@ public class MembreController {
             throws ServletException, IOException {
              PrintWriter out = response.getWriter();
             try{              
-                String idpers=request.getParameter("idpers");
+                
                 String nom=request.getParameter("nom");
                 String sexe=request.getParameter("sexe");
                 String contact=request.getParameter("contact");

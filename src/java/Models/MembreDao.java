@@ -75,12 +75,12 @@ public class MembreDao {
    public void add(Membre m)throws Exception{
         Databases.getConnecion();
         try{
-            PreparedStatement ps= Databases.preparedQuerry("INSERT INTO  membre VALUES(?,?,?,?,?)");
-            ps.setString(1, m.getNumMembre());
-            ps.setString(2, m.getNom());
-            ps.setString(3,m.getSexe());
-            ps.setInt(4,m.getAge());
-            ps.setString(5, m.getContact());
+            PreparedStatement ps= Databases.preparedQuerry("INSERT INTO  membre(nom,sexe,age,contact,email) VALUES(?,?,?,?,?)");
+            ps.setString(1, m.getNom());
+            ps.setString(2,m.getSexe());
+            ps.setInt(3,m.getAge());
+            ps.setString(4, m.getContact());
+            ps.setString(5, m.getEmail());
             ps.executeUpdate();
         }finally{
             Databases.closeConnection();
