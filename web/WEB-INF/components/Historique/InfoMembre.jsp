@@ -14,9 +14,9 @@
    <div class="p-4 custom-border">
                         <h4 class="fs-5 fw-medium text-dark mb-3">Informations de l'emprunteur</h4>
                         <div class="row ">
-                            <p><strong>numéro du Membre :</strong><%=membre.getNom()%></p>
+                            <p><strong>numéro du Membre :</strong><%=membre.getNumMembre()%></p>
                             <p><strong>Nom :</strong><%=membre.getNom()%></p>
-                            <p><strong>email :</strong><%=membre.getContact()%></p>
+                            <p><strong>email :</strong><%=membre.getEmail()%></p>
                             <p><strong>contact :</strong><%=membre.getContact()%></p>
                             
                         </div>

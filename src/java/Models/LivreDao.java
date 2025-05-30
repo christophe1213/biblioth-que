@@ -41,7 +41,7 @@ public class LivreDao {
                 int e=rs.getInt(4);
                 Livre l = new Livre(id,code,design,e);
                 livres.add(l);
-                i++;
+            
             
             }
             
@@ -66,6 +66,7 @@ public class LivreDao {
               while (rs.next()) {
   
                l.setIdLivre(rs.getInt(1));
+               l.setCodeLivre(rs.getString("codelivre"));
                l.setDesign(rs.getString(3));
                l.setExemplaire(rs.getInt(4));
             

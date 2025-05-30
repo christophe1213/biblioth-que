@@ -86,10 +86,10 @@ public class Membre {
     
     
     public List<Preter>getHistoriquePres() throws Exception {
-        return new  PreterDao().select(" SELECT *  from  preter WHERE idpers='"+numMembre+"' order by datepret DESC");     
+        return new  PreterDao().select(" SELECT *  from  preter WHERE idpers='"+id+"' order by datepret DESC");     
     }
     public List<Rendre>getHistoriqueRecu() throws Exception{
-        return new RendreDao().select("SELECT *  from  rendre WHERE idpers='"+numMembre+"' order by daterendu DESC;");    
+        return new RendreDao().select("SELECT *  from  rendre WHERE idpers='"+id+"' order by daterendu DESC;");    
     }
     public String getNumMembre() {
         return numMembre;
