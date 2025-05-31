@@ -10,6 +10,7 @@
         <script src="js/api/Rendre.js"></script>
         <jsp:include page="../components/NavBar.jsp" />
         <jsp:include page="../components/SideBar.jsp"/>
+        <jsp:include page="../components/Rendre/AddModal.jsp"/>
         <jsp:include page="../components/Rendre/UpdateModal.jsp"/>
         <jsp:include page="../components/Rendre/DeleteModal.jsp"/>
       
@@ -18,6 +19,7 @@
              <div  class="section">
                <div class="d-flex justify-content-between align-items-center mb-4">
                         <h2>Listes de rendus </h2>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Ajouter un rendu</button>
                        
                </div>
                

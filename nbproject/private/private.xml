@@ -27,6 +27,38 @@
             <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/HistoriquePret.jsp</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageMembre/MembreView.jsp</file>
             <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/SideBar.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/MembreDao.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Emprunt/EmpruntView.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageMembre/TableMembre.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageMembre/InsertMembreModal.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/Membre.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/js/MembreManagement.js</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/js/api/Membre.js</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/js/api/Rendre.js</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageMembre/UpdateMembreModal.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Emprunt/UpdateModal.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageMembre/DeleteModal.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Emprunt/DeleteModal.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/AddEmprunt.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/PageMembre/DeleteModalMembre.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Rendre/RendreView.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Rendre/DeleteModal.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/Preter.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Historique/ListePrets.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/LivreDao.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Models/Livre.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Historique/InfoMembre.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Router/PreterRouter.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Historique/ListeRendu.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/HistoriqueRendu.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/src/java/Router/RendreRouter.java</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Rendre/TableRendus.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/View/Rendre.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Rendre/AddModal.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Rendre/UpdateModal.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/components/Emprunt/FormEmprunt.jsp</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/js/formRendus.js</file>
+            <file>file:/D:/Test/TestJava/Bibliothèque/web/WEB-INF/web.xml</file>
         </group>
     </open-files>
 </project-private>

@@ -4,6 +4,8 @@ package Controllers;
 import Models.Databases;
 import Models.Livre;
 import Models.LivreDao;
+import Models.Membre;
+import Models.MembreDao;
 import Models.Preter;
 import Models.PreterDao;
 import jakarta.servlet.ServletException;
@@ -46,15 +48,21 @@ public class RendreController {
     
     public static void get(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException{
-           List<Rendre>rendus = new ArrayList<Rendre>();
+            List<Rendre>rendus = new ArrayList<Rendre>();
+            List<Livre> livres = new ArrayList<Livre>(); 
+            List<Membre> membres = new ArrayList<Membre>();
              try{
                  Databases.getConnecion();
+                 livres= new LivreDao().getAll();
+                 membres= new MembreDao().getAll(); 
                  rendus = new RendreDao().getAll();
                  
              }catch(Exception e){
                    System.out.println(e.getMessage());
                    e.printStackTrace();
              }finally{
+                    request.setAttribute("livres", livres);
+                    request.setAttribute("membres", membres);
                     request.setAttribute("rendus", rendus);
                     request.getRequestDispatcher("/WEB-INF/View/Rendre.jsp").forward(request, response);
                     Databases.closeConnection();
@@ -79,13 +87,13 @@ public class RendreController {
                 l.setExemplaire(l.getExemplaire()+1);
                 new LivreDao().update(l);
                 
-                  RendreDao  rendreService= new RendreDao();
+                 RendreDao  rendreService= new RendreDao();
                 String idrendu=rendreService.idGenerate();
 
                 rendreService.add(new Rendre(idrendu,idpers,idlivre,datrendu));
                 out.print("success");
             }catch(Exception e){
-                out.println("errorm: "+e.getMessage());
+                out.println("error: "+request.getParameter("idpers")+request.getParameter("idlivre")+request.getParameter("dateRendu")+e.getMessage());
             }finally{
                 Databases.closeConnection();
             }

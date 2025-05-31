@@ -23,7 +23,20 @@ function getRendu(){
         tbody.innerHTML=r
     }).catch((console.error()))
 }
+function addRendu(formData){
+    api.post("Rendre/add",formData).then((r)=>{
+        console.log(r)
+        if(r=="success")
+        {
+            getRendu()
+            var modalElement = document.getElementById('addModal');
+            var modalInstance = bootstrap.Modal.getInstance(modalElement)
+            modalInstance.hide();
+        }
+         
+    }).catch((e)=>{ console.log(e)})
 
+}
 function updateRendu(formData){
     api.post('Rendre/update',formData).then((r)=>{
         console.log(r)
