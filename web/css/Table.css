@@ -42,3 +42,14 @@ thead th{
     padding-top: 1rem;
     height: 91.6vh;
 }
+.container-table {
+    height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+.container-table thead th {
+    position: sticky;
+    top: 0;
+  
+    z-index: 1;
+}

@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<div class="table-responsive">
+<div class="container-table table-responsive">
           <table class="table table-bordered table-striped">
             <thead class="table-dark">
               <tr>
