@@ -43,49 +43,17 @@
                                                          
                                              )""
                                              data-bs-toggle="modal" data-bs-target="#update"  
-                                      ><i class="ri-pencil-line me-1"></i>Modifier</li>
+                                             ><button class="dropdown-item btn btn-sm btn-outline-info me-1"> <i  class="ri-pencil-line me-1"></i>Modifier   </button><li>
                                       <li
                                           data-bs-toggle="modal" data-bs-target="#deleteModal"
                                     onclick="setIdDelete('<%=membre.getId()%>')"
-                                     ><i class="ri-delete-bin-line me-1"></i>Supprimer</li>
+                                    ><button class="dropdown-item btn btn-sm btn-outline-info me-1"><i class="ri-delete-bin-line me-1"></i>Supprimer</li></button>
                                       <li><button class="dropdown-item btn btn-sm btn-outline-info me-1"
                                                onclick=" window.location.href='<%=request.getContextPath()%>/Historique/pret/get?id=<%=membre.getId()%>'"   
                                                   ><i class="ri-book-open-line me-1"></i>Voir emprunts</button></li>
-                                      <li><a class="dropdown-item" href="<%=request.getContextPath()%>/Historique/rendus/get?id=<%=membre.getId()%>'"><i class="ri-check-double-line me-1"></i>Voir rendus</a></li>
+                                      <li><a class="dropdown-item" href="<%=request.getContextPath()%>/Historique/rendus/get?id=<%=membre.getId()%>"><i class="ri-check-double-line me-1"></i>Voir rendus</a></li>
                                     </ul>
                                   </div>
-                              <!--button class="btn btn-sm btn-success me-2" 
-                                 data-bs-toggle="modal" data-bs-target="#update"     
-                                 onclick="setDataMembreUpdate(
-                                             '<%=membre.getNumMembre()%>',
-                                             '<%=membre.getNom()%>',
-                                             '<%=membre.getSexe()%>',
-                                             <%=membre.getAge()%>,
-                                             '<%=membre.getContact()%>',
-                                             ''
-                                                         
-                                             )""
-                                 >Modifier</button>
-                              <button class="btn btn-sm btn-danger" id=""  onclick="deleteMembre('<%=membre.getId()%>')">Supprimer</button>
-                             <button class="btn btn-sm btn-outline-primary me-1" title="Modifier">
-          <i class="ri-pencil-line"></i>
-        </button>
-        <button class="btn btn-sm btn-outline-danger me-1" title="Supprimer">
-          <i class="ri-delete-bin-line"></i>
-        </button>
-        <button class="btn btn-sm btn-outline-secondary" title="Voir historique"
-          onclick=" window.location.href='<%=request.getContextPath()%>/Historique/pret/get?id=4'">
-          <i class="ri-book-2-line"></i>    
-        </button>
-          <button class="btn btn-sm btn-outline-info me-1" title="Voir emprunts"
-  onclick="window.location.href = 'historique.html?id=${membre.id}&type=emprunt'">
-  <i class="ri-book-open-line"></i>
-</button>
-<button class="btn btn-sm btn-outline-success" title="Voir rendus"
-  onclick="window.location.href = 'historique.html?id=${membre.id}&type=rendu'">
-  <i class="ri-check-double-line"></i>
-</button-->
-                            
                             </td>
                     </tr>
                  
