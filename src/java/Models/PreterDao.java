@@ -22,6 +22,10 @@ public class PreterDao {
         return select("SELECT * FROM preter WHERE datepret BETWEEN '"+start+"' and '"+end+"' order by datepret DESC");     
     }
     
+    public List<Preter>getRetardataire() throws Exception{
+        return select("SELECT * FROM preter WHERE dateRetour - CURRENT_DATE < 0;");
+    }
+    
     
     public List<Preter>select(String q) throws Exception {
         List<Preter> prets = new ArrayList<>();

@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
+import java.time.temporal.ChronoUnit;
 /**
  *
  * @author Thierry Christophe
@@ -29,4 +30,10 @@ public class FormatDate {
         LocalDateTime dt= d.atStartOfDay();
         return formatDMMMyyy(dt);
     }
+    
+    public static String differrenceDay(LocalDate d){
+        return ChronoUnit.DAYS.between(d,LocalDate.now())+" jours";
+    }
+    
+    
 }
