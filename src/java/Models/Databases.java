@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
+import  environnement.Env;
 /**
  *
  * @author Thierry Christophe
@@ -17,9 +17,9 @@ import java.sql.ResultSet;
 public class Databases {
       public static  Connection con ;
       protected static PreparedStatement ps ;
-      protected static String url = "jdbc:postgresql://localhost:5432/bibliotheque";;
-      protected static String user = "postgres";
-      protected static String password = "azerty";
+      protected static String url = Env.urlDb;
+      protected static String user = Env.userDb;
+      protected static String password = Env.passwordDb;
       
     
     public Databases(){
